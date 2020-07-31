@@ -56,8 +56,7 @@
 							<td class="align-middle">${lista.nombreCli}</td>
 							<td class="align-middle">${lista.rubroCli}</td>
 							<td class="align-middle">${lista.direccionCli}</td>
-							
-                          </tr>
+					        </tr>
                     </c:forEach>
                    </tbody>
                 </table>
