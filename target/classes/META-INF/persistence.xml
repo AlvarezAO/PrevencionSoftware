@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="modulo5dia12">
+		<class>cl.m5d12.dao.Accidente</class>
+		<class>cl.m5d12.dao.Asesoria</class>
+		<class>cl.m5d12.dao.Capacitacion</class>
+		<class>cl.m5d12.dao.Checklist</class>
+		<class>cl.m5d12.dao.Cliente</class>
+		<class>cl.m5d12.dao.Empleado</class>
+		<class>cl.m5d12.dao.Login</class>
+		<class>cl.m5d12.dao.Pago</class>
+		<class>cl.m5d12.dao.Visita</class>
+	</persistence-unit>
+</persistence>
