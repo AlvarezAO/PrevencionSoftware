@@ -19,9 +19,6 @@ public class Empleado implements Serializable {
 	@Column(name="RUT_EMP")
 	private String rutEmp;
 
-	@Column(name="CLAVE_EMP")
-	private String claveEmp;
-
 	@Column(name="EMAIL_EMP")
 	private String emailEmp;
 
@@ -45,21 +42,19 @@ public class Empleado implements Serializable {
 		
 	}
 	
-	public Empleado(String rutEmp, String claveEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp) {
+	public Empleado(String rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp) {
 		
 		this.rutEmp = rutEmp;
-		this.claveEmp = claveEmp;
 		this.emailEmp = emailEmp;
 		this.fonoEmp = fonoEmp;
 		this.nombreEmp = nombreEmp;
 	}
 
 
-	public Empleado(String rutEmp, String claveEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
+	public Empleado(String rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
 			List<Login> logins) {
 		
 		this.rutEmp = rutEmp;
-		this.claveEmp = claveEmp;
 		this.emailEmp = emailEmp;
 		this.fonoEmp = fonoEmp;
 		this.nombreEmp = nombreEmp;
@@ -67,11 +62,10 @@ public class Empleado implements Serializable {
 	}
 	
 
-	public Empleado(String rutEmp, String claveEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
+	public Empleado(String rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
 			List<Login> logins, List<Visita> visitas) {
 		
 		this.rutEmp = rutEmp;
-		this.claveEmp = claveEmp;
 		this.emailEmp = emailEmp;
 		this.fonoEmp = fonoEmp;
 		this.nombreEmp = nombreEmp;
@@ -88,13 +82,6 @@ public class Empleado implements Serializable {
 		this.rutEmp = rutEmp;
 	}
 
-	public String getClaveEmp() {
-		return this.claveEmp;
-	}
-
-	public void setClaveEmp(String claveEmp) {
-		this.claveEmp = claveEmp;
-	}
 
 	public String getEmailEmp() {
 		return this.emailEmp;

@@ -12,7 +12,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/index" access="permitAll" />
 		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/listarclientes" access="hasRole('ADMIN')" />
-		<intercept-url pattern="/cliform" access="hasRole('USUARIO')" />
+		<intercept-url pattern="/cliform" access="hasRole('ADMIN')" />
 		<form-login 
 			login-page="/login"
 			authentication-failure-url="/error"
@@ -28,11 +28,12 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 			<password-encoder hash="bcrypt"/>
 		    <jdbc-user-service data-source-ref="dataSource"
 		     users-by-username-query=" 
-		    select rut_emp as username, clave_emp as password, 1 as enabled from empleado where rut_emp=?"
+		    select rut_usuarios as username, clave_usuarios as password, 1 as enabled from AUTORIZACION where rut_usuarios=?"
 		
-		            authorities-by-username-query="select u.rut_emp as username, ur.rol as authority from empleado u,
-		             login ur 
-		where u.rut_emp = ur.rut_emp and u.rut_emp = (SELECT rut_emp from empleado where rut_emp = ?)" />
+		            authorities-by-username-query="select a.rut_usuarios as username, ar.rol as authority
+											from AUTORIZACION a, LOGIN ar
+											where a.rut_usuarios = ar.rut_usuarios
+											and a.rut_usuarios = (SELECT rut_usuarios from LOGIN where rut_usuarios = ?)"/>
 		       
 		</authentication-provider>
 	</authentication-manager>
