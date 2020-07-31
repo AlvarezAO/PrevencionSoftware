@@ -1,5 +1,3 @@
-
-
 <%@include file="head.jsp"%>
 <%@include file="nav.jsp" %>
 <body>

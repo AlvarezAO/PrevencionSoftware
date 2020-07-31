@@ -27,11 +27,13 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<authentication-provider>
 			<password-encoder hash="bcrypt"/>
 		    <jdbc-user-service data-source-ref="dataSource"
-		            users-by-username-query=" 
-		    select login as username, clave as password, 1 as enabled from usuarios where login=?"
+		     users-by-username-query=" 
+		    select rut_emp as username, clave_emp as password, 1 as enabled from empleado where rut_emp=?"
 		
-		            authorities-by-username-query="select u.login as username, ur.rol as authority from usuarios u, perfilusuario ur 
-		where u.usuarioid = ur.usuarioid and u.usuarioid = (SELECT usuarioid from usuarios where login = ?)" />
+		            authorities-by-username-query="select u.rut_emp as username, ur.rol as authority from empleado u,
+		             login ur 
+		where u.rut_emp = ur.rut_emp and u.rut_emp = (SELECT rut_emp from empleado where rut_emp = ?)" />
+		       
 		</authentication-provider>
 	</authentication-manager>
 	
