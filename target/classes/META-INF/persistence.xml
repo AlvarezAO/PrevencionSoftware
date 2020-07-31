@@ -11,4 +11,8 @@
 		<class>cl.m5d12.dao.Pago</class>
 		<class>cl.m5d12.dao.Visita</class>
 	</persistence-unit>
+	
+	
+	
+	
 </persistence>
