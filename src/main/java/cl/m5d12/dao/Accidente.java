@@ -39,8 +39,45 @@ public class Accidente implements Serializable {
 	@OneToMany(mappedBy="accidente")
 	private List<Visita> visitas;
 
+	//Constructor
 	public Accidente() {
+		
+	}	
+
+	public Accidente(long idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
+			String nombreAccidente) {
+		super();
+		this.idAccidente = idAccidente;
+		this.detalleAccidente = detalleAccidente;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaAccidente = fechaAccidente;
+		this.nombreAccidente = nombreAccidente;
 	}
+	
+	public Accidente(long idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
+			String nombreAccidente, Cliente cliente) {
+		super();
+		this.idAccidente = idAccidente;
+		this.detalleAccidente = detalleAccidente;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaAccidente = fechaAccidente;
+		this.nombreAccidente = nombreAccidente;
+		this.cliente = cliente;
+	}
+	
+	public Accidente(long idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
+			String nombreAccidente, Cliente cliente, List<Visita> visitas) {
+		super();
+		this.idAccidente = idAccidente;
+		this.detalleAccidente = detalleAccidente;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaAccidente = fechaAccidente;
+		this.nombreAccidente = nombreAccidente;
+		this.cliente = cliente;
+		this.visitas = visitas;
+	}
+	
+	//Getters and Setters
 
 	public long getIdAccidente() {
 		return this.idAccidente;

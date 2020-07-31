@@ -27,8 +27,28 @@ public class Checklist implements Serializable {
 	@JoinColumn(name="ID_VISITAS")
 	private Visita visita;
 
+	
+	//Constructor
 	public Checklist() {
+		
+	}	
+
+	public Checklist(long idChecklist, String detalleChequeo, String estado) {
+		super();
+		this.idChecklist = idChecklist;
+		this.detalleChequeo = detalleChequeo;
+		this.estado = estado;
 	}
+	
+	public Checklist(long idChecklist, String detalleChequeo, String estado, Visita visita) {
+		super();
+		this.idChecklist = idChecklist;
+		this.detalleChequeo = detalleChequeo;
+		this.estado = estado;
+		this.visita = visita;
+	}
+	
+	//Getters and Setters
 
 	public long getIdChecklist() {
 		return this.idChecklist;

@@ -29,9 +29,27 @@ public class Login implements Serializable {
 	@JoinColumn(name="RUT_EMP")
 	private Empleado empleado;
 
+	
+	//Constructor
 	public Login() {
+		
+	}	
+
+	public Login(long idLogin, String rol, Cliente cliente) {
+		super();
+		this.idLogin = idLogin;
+		this.rol = rol;
+		this.cliente = cliente;
+	}
+	
+	public Login(long idLogin, String rol, Empleado empleado) {
+		super();
+		this.idLogin = idLogin;
+		this.rol = rol;
+		this.empleado = empleado;
 	}
 
+	//Getters and Setters
 	public long getIdLogin() {
 		return this.idLogin;
 	}

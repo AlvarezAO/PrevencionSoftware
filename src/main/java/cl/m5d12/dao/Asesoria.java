@@ -39,9 +39,45 @@ public class Asesoria implements Serializable {
 	@OneToMany(mappedBy="asesoria")
 	private List<Visita> visitas;
 
+	
+	//Constructor
 	public Asesoria() {
+		
+	}	
+
+	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso) {
+		super();
+		this.idAseso = idAseso;
+		this.detalleAseso = detalleAseso;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaAseso = fechaAseso;
+		this.nombreAseso = nombreAseso;
 	}
 
+	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso,
+			Cliente cliente) {
+		super();
+		this.idAseso = idAseso;
+		this.detalleAseso = detalleAseso;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaAseso = fechaAseso;
+		this.nombreAseso = nombreAseso;
+		this.cliente = cliente;
+	}	
+
+	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso,
+			Cliente cliente, List<Visita> visitas) {
+		super();
+		this.idAseso = idAseso;
+		this.detalleAseso = detalleAseso;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaAseso = fechaAseso;
+		this.nombreAseso = nombreAseso;
+		this.cliente = cliente;
+		this.visitas = visitas;
+	}
+
+	//Getters and Setters
 	public long getIdAseso() {
 		return this.idAseso;
 	}

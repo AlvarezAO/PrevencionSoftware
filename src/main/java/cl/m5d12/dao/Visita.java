@@ -50,8 +50,47 @@ public class Visita implements Serializable {
 	@JoinColumn(name="RUT_EMP")
 	private Empleado empleado;
 
+	
+	//Constructor
 	public Visita() {
+		
 	}
+	
+	public Visita(long idVisitas, String direccion, String fecha, List<Checklist> checklists, Accidente accidente,
+			Empleado empleado) {
+		super();
+		this.idVisitas = idVisitas;
+		this.direccion = direccion;
+		this.fecha = fecha;
+		this.checklists = checklists;
+		this.accidente = accidente;
+		this.empleado = empleado;
+	}
+	
+	public Visita(long idVisitas, BigDecimal cantAsistentes, String direccion, String fecha, List<Checklist> checklists,
+			Capacitacion capacitacion, Empleado empleado) {
+		super();
+		this.idVisitas = idVisitas;
+		this.cantAsistentes = cantAsistentes;
+		this.direccion = direccion;
+		this.fecha = fecha;
+		this.checklists = checklists;
+		this.capacitacion = capacitacion;
+		this.empleado = empleado;
+	}
+	
+	public Visita(long idVisitas, String direccion, String fecha, List<Checklist> checklists, Asesoria asesoria,
+			Empleado empleado) {
+		super();
+		this.idVisitas = idVisitas;
+		this.direccion = direccion;
+		this.fecha = fecha;
+		this.checklists = checklists;
+		this.asesoria = asesoria;
+		this.empleado = empleado;
+	}
+	
+	//Getters and Setters
 
 	public long getIdVisitas() {
 		return this.idVisitas;

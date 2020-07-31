@@ -35,8 +35,23 @@ public class Pago implements Serializable {
 	@JoinColumn(name="RUT_CLI")
 	private Cliente cliente;
 
+	//Constructor
 	public Pago() {
+		
 	}
+
+	public Pago(long idPago, String fechaPago, String fechaVencimiento, BigDecimal montoPagado, BigDecimal montoTotal,
+			Cliente cliente) {
+		super();
+		this.idPago = idPago;
+		this.fechaPago = fechaPago;
+		this.fechaVencimiento = fechaVencimiento;
+		this.montoPagado = montoPagado;
+		this.montoTotal = montoTotal;
+		this.cliente = cliente;
+	}
+
+	//Getters and Setters
 
 	public long getIdPago() {
 		return this.idPago;

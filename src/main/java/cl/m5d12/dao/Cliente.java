@@ -49,10 +49,38 @@ public class Cliente implements Serializable {
 	//bi-directional many-to-one association to Pago
 	@OneToMany(mappedBy="cliente")
 	private List<Pago> pagos;
-
+	
+	//Constructor
 	public Cliente() {
+		
+	}	
+
+	public Cliente(String rutCli, String claveCli, String direccionCli, String nombreCli, String rubroCli) {
+		super();
+		this.rutCli = rutCli;
+		this.claveCli = claveCli;
+		this.direccionCli = direccionCli;
+		this.nombreCli = nombreCli;
+		this.rubroCli = rubroCli;
 	}
 
+	public Cliente(String rutCli, String claveCli, String direccionCli, String nombreCli, String rubroCli,
+			List<Accidente> accidentes, List<Asesoria> asesorias, List<Capacitacion> capacitacions, List<Login> logins,
+			List<Pago> pagos) {
+		super();
+		this.rutCli = rutCli;
+		this.claveCli = claveCli;
+		this.direccionCli = direccionCli;
+		this.nombreCli = nombreCli;
+		this.rubroCli = rubroCli;
+		this.accidentes = accidentes;
+		this.asesorias = asesorias;
+		this.capacitacions = capacitacions;
+		this.logins = logins;
+		this.pagos = pagos;
+	}
+
+	//Getters and Setters
 	public String getRutCli() {
 		return this.rutCli;
 	}

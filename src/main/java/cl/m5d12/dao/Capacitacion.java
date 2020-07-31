@@ -39,8 +39,44 @@ public class Capacitacion implements Serializable {
 	@OneToMany(mappedBy="capacitacion")
 	private List<Visita> visitas;
 
+	//Constructor
 	public Capacitacion() {
+		
+	}	
+
+	public Capacitacion(long idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa) {
+		super();
+		this.idCapa = idCapa;
+		this.detalleCapa = detalleCapa;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaCapa = fechaCapa;
+		this.nombreCapa = nombreCapa;
 	}
+
+	public Capacitacion(long idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa,
+			Cliente cliente) {
+		super();
+		this.idCapa = idCapa;
+		this.detalleCapa = detalleCapa;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaCapa = fechaCapa;
+		this.nombreCapa = nombreCapa;
+		this.cliente = cliente;
+	}	
+
+	public Capacitacion(long idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa,
+			Cliente cliente, List<Visita> visitas) {
+		super();
+		this.idCapa = idCapa;
+		this.detalleCapa = detalleCapa;
+		this.estadoSolicitud = estadoSolicitud;
+		this.fechaCapa = fechaCapa;
+		this.nombreCapa = nombreCapa;
+		this.cliente = cliente;
+		this.visitas = visitas;
+	}
+	
+	//Getters and Setters
 
 	public long getIdCapa() {
 		return this.idCapa;
