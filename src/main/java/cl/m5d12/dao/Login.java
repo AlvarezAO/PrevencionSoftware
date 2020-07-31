@@ -49,6 +49,7 @@ public class Login implements Serializable {
 		this.empleado = empleado;
 	}
 
+	
 	//Getters and Setters
 	public long getIdLogin() {
 		return this.idLogin;

@@ -9,6 +9,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true">
 		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/index" access="permitAll" />
 		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/listarclientes" access="hasRole('ADMIN')" />
 		<intercept-url pattern="/cliform" access="hasRole('USUARIO')" />
