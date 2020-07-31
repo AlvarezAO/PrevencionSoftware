@@ -42,7 +42,7 @@ public class ClienteControlador {
 
     @RequestMapping(value="/save",method = RequestMethod.POST)    
     public String save(@ModelAttribute("cli") Cliente cli){    
-        cs.addCliente(cli);;
+        cs.addCliente(cli);
         return "redirect:/listarclientes";
     }
     	
@@ -72,8 +72,8 @@ public class ClienteControlador {
     }
     
     @RequestMapping(value="/eliminarusuario/{rutCli}")
-	public String eliminaUser(@PathVariable int rut) {
-		cs.deleteCliente(rut);
+	public String eliminaUser(@PathVariable int rutCli) {
+		cs.deleteCliente(rutCli);
 		return "redirect:/listarclientes";
 	}
 	
@@ -84,6 +84,16 @@ public class ClienteControlador {
 		
 		return "editausuario";
 	}
+	
+	@RequestMapping(value="/guardacambio", method = RequestMethod.POST) 
+    public String guardaCambio(Cliente cli){
+        cs.updateCliente(cli);
+		return "redirect:/listarclientes";
+    }
+
+	
+	
+	
 	
 }
 	

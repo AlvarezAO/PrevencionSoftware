@@ -16,7 +16,7 @@ public class Cliente implements Serializable {
 
 	@Id
 	@Column(name="RUT_CLI")
-	private String rutCli;
+	private int rutCli;
 
 	@Column(name="CLAVE_CLI")
 	private String claveCli;
@@ -55,7 +55,7 @@ public class Cliente implements Serializable {
 		
 	}	
 
-	public Cliente(String rutCli, String claveCli, String direccionCli, String nombreCli, String rubroCli) {
+	public Cliente(int rutCli, String claveCli, String direccionCli, String nombreCli, String rubroCli) {
 		super();
 		this.rutCli = rutCli;
 		this.claveCli = claveCli;
@@ -64,7 +64,7 @@ public class Cliente implements Serializable {
 		this.rubroCli = rubroCli;
 	}
 
-	public Cliente(String rutCli, String claveCli, String direccionCli, String nombreCli, String rubroCli,
+	public Cliente(int rutCli, String claveCli, String direccionCli, String nombreCli, String rubroCli,
 			List<Accidente> accidentes, List<Asesoria> asesorias, List<Capacitacion> capacitacions, List<Login> logins,
 			List<Pago> pagos) {
 		super();
@@ -81,11 +81,11 @@ public class Cliente implements Serializable {
 	}
 
 	//Getters and Setters
-	public String getRutCli() {
+	public int getRutCli() {
 		return this.rutCli;
 	}
 
-	public void setRutCli(String rutCli) {
+	public void setRutCli(int rutCli) {
 		this.rutCli = rutCli;
 	}
 

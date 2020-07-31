@@ -28,23 +28,23 @@
                 <p></p>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="rut-input-field">Rut: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="rut_cli" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="rutCli" class="form-control" type="number" length="8" /></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="nombre-input-field">Nombre: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="nombre_cli" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="nombreCli" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="rubro-input-field">Rubro: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="rubro_cli" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="rubroCli" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="direccion-pawssword-input-field">Direcion: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="direccion_cli" class="form-control" type="email" /></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="direccion-input-field">Direcion: </label></div>
+                    <div class="col-sm-6 input-column"><form:input path="direccionCli" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Clave: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="clave_cli" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="claveCli" class="form-control" type="password" /></div>
                 </div>
                                 
                 <button class="btn btn-primary submit-button mb-3" type="submit" >Guardar</button>

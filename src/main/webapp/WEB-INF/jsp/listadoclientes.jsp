@@ -67,14 +67,14 @@
                   <c:forEach items="${lclientes}" var="lista">
                           <tr>
                             <td align="center">
-                              <a class="btn btn-primary mb-1" title="Editar usuario" href="editusuario/${lista.rut_cli}"><em class="fa fa-pencil xs"></em></a>
-                              <a class="btn btn-danger mb-1" title="Eliminar usuario" href="eliminarusuario/${lista.rut_cli}"><em class="fa fa-trash xs"></em></a>
-                              <a class="btn btn-warning mb-1" title="Dar de alta" href="agregarol/${lista.rut_cli}"><em class="fa fa-male xs"></em></a>
+                              <a class="btn btn-primary mb-1" title="Editar usuario" href="editusuario/${lista.rutCli}"><em class="fa fa-pencil xs"></em></a>
+                              <a class="btn btn-danger mb-1" title="Eliminar usuario" href="eliminarusuario/${lista.rutCli}"><em class="fa fa-trash xs"></em></a>
+                              <a class="btn btn-warning mb-1" title="Dar de alta" href="agregarol/${lista.rutCli}"><em class="fa fa-male xs"></em></a>
                             </td>
-                            <td class="align-middle">${lista.rut_cli}</td>
-							<td class="align-middle">${lista.nombre_cli}</td>
-							<td class="align-middle">${lista.rubro_cli}</td>
-							<td class="align-middle">${lista.direccion_cli}</td>
+                            <td class="align-middle">${lista.rutCli}</td>
+							<td class="align-middle">${lista.nombreCli}</td>
+							<td class="align-middle">${lista.rubroCli}</td>
+							<td class="align-middle">${lista.direccionCli}</td>
 							
                           </tr>
                     </c:forEach>
@@ -87,4 +87,4 @@
   </div>
    
 
-<%@include file="/footer.jsp" %>
+<%-- <%@include file="/footer.jsp" %> --%>
