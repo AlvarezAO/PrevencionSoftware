@@ -22,7 +22,11 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="listarclientes">Ver Clientes</a></li>
                     <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="cliform">Crear Clientes</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="cliform">Registrar Clientes</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="listarempleados">Ver Clientes</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="empform">Registrar Profesionales</a></li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Ver Solicitudes</a></li>
                     <li class="nav-item" role="presentation"></li>

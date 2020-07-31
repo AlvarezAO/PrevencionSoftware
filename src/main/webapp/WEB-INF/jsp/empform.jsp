@@ -1,5 +1,6 @@
-<%@include file="/head.jsp" %>		
-<%@include file="/nav.jsp" %>
+ 
+   <%@include file="/head.jsp" %>
+   <%@include file="/nav.jsp" %>
 
 <style>      
     body{
@@ -17,32 +18,35 @@
     }
 </style>
 
+
+
+
 <div class="row register-form">
         <div class="col-md-8 offset-md-2">
-            <form:form class="custom-form" method="post" action="/modulo5dia12/guardacambio">
-                <h1>EDITAR CLIENTE</h1>
+            <form:form class="custom-form" method="post" action="savepro">
+                <h1>AGREGAR NUEVO PROFESIONAL</h1>
                 <p></p>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="rut-input-field">Rut: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="rutCli" class="form-control" type="number" readonly="true" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="rutEmp" class="form-control" type="number" length="8" /></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="nombre-input-field">Nombre: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="nombreCli" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="nombreEmp" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="rubro-input-field">Rubro: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="rubroCli" class="form-control" type="text" /></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="rubro-input-field">Telefono: </label></div>
+                    <div class="col-sm-6 input-column"><form:input path="fonoEmp" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="direccion-input-field">Direcion: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="direccionCli" class="form-control" type="text" /></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="direccion-input-field">E-Mail: </label></div>
+                    <div class="col-sm-6 input-column"><form:input path="emailEmp" class="form-control" type="email" /></div>
                 </div>
+                
                                 
                 <button class="btn btn-primary submit-button mb-3" type="submit" >Guardar</button>
                 </form:form>
         </div>
     </div>
 
-
-<%@include file="/footer.jsp" %> 
+	<%@include file="/footer.jsp" %>

@@ -17,7 +17,7 @@ public class Empleado implements Serializable {
 
 	@Id
 	@Column(name="RUT_EMP")
-	private String rutEmp;
+	private int rutEmp;
 
 	@Column(name="EMAIL_EMP")
 	private String emailEmp;
@@ -42,7 +42,7 @@ public class Empleado implements Serializable {
 		
 	}
 	
-	public Empleado(String rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp) {
+	public Empleado(int rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp) {
 		
 		this.rutEmp = rutEmp;
 		this.emailEmp = emailEmp;
@@ -51,7 +51,7 @@ public class Empleado implements Serializable {
 	}
 
 
-	public Empleado(String rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
+	public Empleado(int rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
 			List<Login> logins) {
 		
 		this.rutEmp = rutEmp;
@@ -62,7 +62,7 @@ public class Empleado implements Serializable {
 	}
 	
 
-	public Empleado(String rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
+	public Empleado(int rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
 			List<Login> logins, List<Visita> visitas) {
 		
 		this.rutEmp = rutEmp;
@@ -74,11 +74,11 @@ public class Empleado implements Serializable {
 	}
 
 
-	public String getRutEmp() {
+	public int getRutEmp() {
 		return this.rutEmp;
 	}
 
-	public void setRutEmp(String rutEmp) {
+	public void setRutEmp(int rutEmp) {
 		this.rutEmp = rutEmp;
 	}
 
