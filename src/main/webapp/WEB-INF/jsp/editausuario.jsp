@@ -1,7 +1,6 @@
-<%@include file="/head.jsp" %>		
+<%@include file="/head.jsp" %>
 <%@include file="/nav.jsp" %>
-
-<style>      
+<style>   
     body{
         padding-top:60px;
     }

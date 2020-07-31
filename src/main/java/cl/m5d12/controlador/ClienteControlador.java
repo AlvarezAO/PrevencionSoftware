@@ -81,7 +81,6 @@ public class ClienteControlador {
 		public String editaUser(@PathVariable int rutCli, Model modelo) {
 		Cliente cli = cs.findClienteByid(rutCli);
 		modelo.addAttribute("command", cli);
-		
 		return "editausuario";
 	}
 	
