@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
     <link rel="stylesheet" href="resources/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="resources/css/Bootstrap-DataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/css/Bold-BS4-Footer-Simple.css">
     <link rel="stylesheet" href="resources/css/Article-List.css">
     <link rel="stylesheet" href="resources/css/styles.css">

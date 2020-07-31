@@ -1,5 +1,6 @@
 <%@include file="/head.jsp" %>
 <%@include file="/nav.jsp" %>
+
 <style>   
     body{
         padding-top:60px;
@@ -15,6 +16,7 @@
         body { padding-top: 60px; }
     }
 </style>
+
 
 <div class="row register-form">
         <div class="col-md-8 offset-md-2">
