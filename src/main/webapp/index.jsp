@@ -1,6 +1,6 @@
 <%@include file="head.jsp"%>
 <%@include file="nav.jsp" %>
-<body>
+
 	 <header class="masthead text-center text-white">
         <div class="masthead-content">
             <div class="container">

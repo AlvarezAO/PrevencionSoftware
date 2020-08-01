@@ -76,6 +76,16 @@ public class Asesoria implements Serializable {
 		this.cliente = cliente;
 		this.visitas = visitas;
 	}
+	
+	
+		public Asesoria(long idAseso, String detalleAseso, String fechaAseso, String nombreAseso, Cliente cliente) {
+		super();
+		this.idAseso = idAseso;
+		this.detalleAseso = detalleAseso;
+		this.fechaAseso = fechaAseso;
+		this.nombreAseso = nombreAseso;
+		this.cliente = cliente;
+	}
 
 	//Getters and Setters
 	public long getIdAseso() {

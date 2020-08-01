@@ -1,6 +1,7 @@
 package cl.m5d12.controlador;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -21,6 +22,8 @@ public class ClienteControlador {
 
 	@Autowired
 	ClienteServicio cs;
+	
+	Logger log = Logger.getLogger(ClienteControlador.class.getName());
 	
 	@RequestMapping("/listarclientes")
 	public String verclientes(Model m) {
@@ -80,8 +83,9 @@ public class ClienteControlador {
 	@RequestMapping(value="/editusuario/{rutCli}")
 		public String editaUser(@PathVariable int rutCli, Model modelo) {
 		Cliente cli = cs.findClienteByid(rutCli);
+		log.info("Ingresao a editar usuario");
 		modelo.addAttribute("command", cli);
-		return "editausuario";
+		return "editarcliente";
 	}
 	
 	@RequestMapping(value="/guardacambio", method = RequestMethod.POST) 
