@@ -15,9 +15,8 @@ public class AccidenteImple implements AccidenteServicio{
 	AccidenteRepository ar;
 	
 	@Override
-	public Accidente findAccidenteByid(int idAccidente) {
-
-		return ar.findOne(idAccidente); 
+	public Accidente findAccidenteByid(long idAccidente) {
+		return ar.findOne((int) idAccidente); 
 	}
 
 	@Override
