@@ -51,7 +51,7 @@ public class AsesoriaControlador {
 	@RequestMapping(value="/eliminaaseso/{idAseso}")
 	public String eliminaaseso(@PathVariable int idAseso) {
 		as.deleteAsesoria(idAseso);
-		return "redirect:listarasesorias";
+		return "redirect:/listarasesorias";
 	}
 	
 	@RequestMapping(value="/changeaseso", method= RequestMethod.POST)

@@ -32,7 +32,7 @@ public class Capacitacion implements Serializable {
 
 	//bi-directional many-to-one association to Cliente
 	@ManyToOne
-	@JoinColumn(name="RUT_CLI")
+	@JoinColumn(name="RUT_CLI", referencedColumnName="RUT_CLI")
 	private Cliente cliente;
 
 	//bi-directional many-to-one association to Visita
