@@ -81,7 +81,7 @@ public class ClienteControlador {
 		public String editaUser(@PathVariable int rutCli, Model modelo) {
 		Cliente cli = cs.findClienteByid(rutCli);
 		modelo.addAttribute("command", cli);
-		return "editausuario";
+		return "editarcliente";
 	}
 	
 	@RequestMapping(value="/guardacambio", method = RequestMethod.POST) 

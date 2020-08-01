@@ -14,6 +14,8 @@
     @media screen and (min-width: 992px) {
         body { padding-top: 60px; }
     }
+    
+    
 </style>
 
 <div class="container">
@@ -50,7 +52,7 @@
                             <td align="center">
                               <a class="btn btn-primary mb-1" title="Editar usuario" href="editusuario/${lista.rutCli}"><em class="fa fa-pencil xs"></em></a>
                               <a class="btn btn-danger mb-1" title="Eliminar usuario" href="eliminarusuario/${lista.rutCli}"><em class="fa fa-trash xs"></em></a>
-                              <a class="btn btn-warning mb-1" title="Dar de alta" href="agregarol/${lista.rutCli}"><em class="fa fa-male xs"></em></a>
+                              <a class="btn btn-warning mb-1" title="Asignar Rol" href="agregarol/${lista.rutCli}"><em class="fa fa-male xs"></em></a>
                             </td>
                             <td class="align-middle">${lista.rutCli}</td>
 							<td class="align-middle">${lista.nombreCli}</td>
@@ -65,6 +67,5 @@
  	 </div>
   </div>
   </div>
-  <script src="resources/js/jquery.min.js"></script>
-  <script src="resources/bootstrap/js/bootstrap.min.js"></script>
- <%-- <%@include file="/footer.jsp" %> --%>
+  
+ <%@include file="/footer.jsp" %> 
