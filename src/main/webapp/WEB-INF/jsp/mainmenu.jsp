@@ -1,6 +1,6 @@
 <%@include file="/head.jsp" %>
 <%@include file="/nav.jsp" %>
-<link rel="stylesheet" href="resources/bootstrap/css/Video-Parallax-Background.css">
+
 <style>      
     body{
         padding-top:100px;

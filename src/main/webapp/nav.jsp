@@ -18,7 +18,7 @@
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="cliform">Registrar Clientes</a></li>
                     <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="listarempleados">Ver Clientes</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="listarempleados">Ver Pro</a></li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="empform">Registrar Profesionales</a></li>
                     <li class="nav-item" role="presentation"></li>
@@ -63,4 +63,20 @@
             </div>
         </div>
     </nav> 
-</sec:authorize>  
+</sec:authorize> 
+
+<style>      
+    body{
+        padding-top:60px;
+    }
+    /* fix padding under menu after resize */
+    @media screen and (max-width: 767px) {
+        body { padding-top: 60px; }
+    }
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        body { padding-top: 110px; }
+    }
+    @media screen and (min-width: 992px) {
+        body { padding-top: 60px; }
+    }
+</style> 

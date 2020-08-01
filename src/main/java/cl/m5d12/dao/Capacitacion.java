@@ -75,7 +75,16 @@ public class Capacitacion implements Serializable {
 		this.cliente = cliente;
 		this.visitas = visitas;
 	}
-	
+		
+	public Capacitacion(long idCapa, String detalleCapa, String fechaCapa, String nombreCapa, Cliente cliente) {
+		super();
+		this.idCapa = idCapa;
+		this.detalleCapa = detalleCapa;
+		this.fechaCapa = fechaCapa;
+		this.nombreCapa = nombreCapa;
+		this.cliente = cliente;
+	}
+
 	//Getters and Setters
 
 	public long getIdCapa() {
