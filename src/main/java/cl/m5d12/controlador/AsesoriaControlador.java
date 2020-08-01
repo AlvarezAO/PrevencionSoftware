@@ -29,10 +29,10 @@ public class AsesoriaControlador {
 		return "listadoasesorias";
 	}
 	
-	@RequestMapping("/asesoForm")
+	@RequestMapping("/asesoform")
 	public String mostarForm(Model m) {
 		m.addAttribute("command", new Asesoria());
-		return "asesoForm";
+		return "asesoform";
 	}
 	
 	@RequestMapping(value="/guardaAseso", method=RequestMethod.POST)

@@ -29,7 +29,7 @@
                 <h3 class="panel-title">Listado de Asesorias</h3>
                  </div>
                   <div class="col-4 text-right">
-                    <a role="button" aria-pressed="true" title="Editar usuario" href="cliform" class="btn btn-sm btn-success btn-create">Agregar asesorias</a>
+                    <a role="button" aria-pressed="true" title="Editar usuario" href="asesoform" class="btn btn-sm btn-success btn-create">Agregar asesorias</a>
                   </div>
                 </div>
               </div>
@@ -52,9 +52,8 @@
                   <c:forEach items="${lasesorias}" var="lista">
                           <tr>
                             <td align="center">
-                              <a class="btn btn-primary mb-1" title="Editar usuario" href="editusuario/${lista.idAseso}"><em class="fa fa-pencil xs"></em></a>
-                              <a class="btn btn-danger mb-1" title="Eliminar usuario" href="eliminarusuario/${lista.idAseso}"><em class="fa fa-trash xs"></em></a>
-                              <a class="btn btn-warning mb-1" title="Asignar Rol" href="agregarol/${lista.idAseso}"><em class="fa fa-male xs"></em></a>
+                              <a class="btn btn-primary mb-1" title="Editar asesoria" href="editAsesoria/${lista.idAseso}"><em class="fa fa-pencil xs"></em></a>
+                              <a class="btn btn-danger mb-1" title="Eliminar asesoria" href="eliminaaseso/${lista.idAseso}"><em class="fa fa-trash xs"></em></a>
                             </td>
                             <td class="align-middle">${lista.idAseso}</td>
 							<td class="align-middle">${lista.detalleAseso}</td>

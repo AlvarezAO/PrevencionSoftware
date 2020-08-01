@@ -36,7 +36,7 @@ public class Asesoria implements Serializable {
 	private Cliente cliente;
 
 	//bi-directional many-to-one association to Visita
-	@OneToMany(mappedBy="asesoria")
+	@OneToMany	(mappedBy="asesoria", fetch=FetchType.EAGER)
 	private List<Visita> visitas;
 
 	
@@ -45,6 +45,8 @@ public class Asesoria implements Serializable {
 		
 	}	
 
+	
+	
 	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso) {
 		super();
 		this.idAseso = idAseso;
@@ -75,16 +77,6 @@ public class Asesoria implements Serializable {
 		this.nombreAseso = nombreAseso;
 		this.cliente = cliente;
 		this.visitas = visitas;
-	}
-	
-	
-		public Asesoria(long idAseso, String detalleAseso, String fechaAseso, String nombreAseso, Cliente cliente) {
-		super();
-		this.idAseso = idAseso;
-		this.detalleAseso = detalleAseso;
-		this.fechaAseso = fechaAseso;
-		this.nombreAseso = nombreAseso;
-		this.cliente = cliente;
 	}
 
 	//Getters and Setters
