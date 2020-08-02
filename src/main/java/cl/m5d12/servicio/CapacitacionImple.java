@@ -16,9 +16,9 @@ public class CapacitacionImple implements CapacitacionServicio {
 	CapacitacionRepository caprepo;
 	
 	@Override
-	public Capacitacion findCapacitacionByid(int idCapa) {
+	public Capacitacion findCapacitacionByid(long idCapa) {
 		
-		return caprepo.findOne(idCapa);
+		return caprepo.findOne((int) idCapa);
 	}
 
 	@Override

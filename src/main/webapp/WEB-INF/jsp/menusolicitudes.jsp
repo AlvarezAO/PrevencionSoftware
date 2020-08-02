@@ -14,7 +14,7 @@
                     <h3 class="name">Historial Asesorias</h3>
                     <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
                 <div
-                    class="col-sm-6 col-md-6 item"><a href="solform"><img class="img-fluid" src="resources/img/building.jpg"></a>
+                    class="col-sm-6 col-md-6 item"><a href="asesoform"><img class="img-fluid" src="resources/img/building.jpg"></a>
                     <h3 class="name">Pedir Asesoria</h3>
                     <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="solform"><i class="fa fa-arrow-circle-right"></i></a></div>
                     
