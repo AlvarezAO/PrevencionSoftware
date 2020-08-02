@@ -9,15 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import cl.m5d12.dao.Capacitacion;
-import cl.m5d12.dao.Cliente;
 import cl.m5d12.servicio.CapacitacionServicio;
 import cl.m5d12.servicio.ClienteServicio;
 
@@ -63,14 +59,14 @@ public class CapacitacionControlador {
 		return "edicapacitacion";
 	}
 	
-	@RequestMapping(value="changecapa", method=RequestMethod.POST)
+	@RequestMapping(value="/changecapa", method=RequestMethod.POST)
 	public String cambiaCapa(Capacitacion cap) {
 		capaser.updateCapa(cap);
 		return "redirect:/listarcapa";
 	}
 	
-	@RequestMapping("/savecapa")
-	public String guardaCapa( Capacitacion capa, HttpServletRequest request) {
+	@RequestMapping(value="/savecapa", method=RequestMethod.POST)
+	public String guardaCapa(@ModelAttribute("capa") Capacitacion capa) {
 		capaser.addCapa(capa);
 		return "redirect:/listarcapa";
 	}

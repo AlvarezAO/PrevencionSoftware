@@ -98,8 +98,4 @@ public class Asesoria {
 		this.rutCli = rutCli;
 	}
 
-
-
-	
-	
 }	

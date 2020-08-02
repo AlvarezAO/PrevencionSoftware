@@ -24,10 +24,10 @@
                 <p></p>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="id-input-field">Id Capacitacion: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="idCapa" class="form-control" type="text" readonly="true" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="idCapa" class="form-control" type="number" readonly="true" /></div>
                 </div>
                  <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="detalle-input-field" >Nombre: </label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="nombre-input-field" >Nombre: </label></div>
                     <div class="col-sm-6 input-column"><form:input path="nombreCapa" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
@@ -35,16 +35,16 @@
                     <div class="col-sm-6 input-column"><form:input path="detalleCapa" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="estado-input-field">Fecha Capacitación: </label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="fecha-input-field">Fecha Capacitación: </label></div>
                     <div class="col-sm-6 input-column"><form:input path="fechaCapa" class="form-control" type="text" /></div>
                 </div>
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Estado Solicitud</label></div>
-                    <div class="col-sm-6 input-column"><form:input path="estadoSolicitud" class="form-control" type="text" /></div>
-                </div>    
                  <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Cliente</label></div>
-                    <div class="col-sm-6 input-column"><form:input path="rutCli" class="form-control" type="text" /></div>
+                     <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Estado Solicitud</label></div> 
+                    <div class="col-sm-6 input-column"><form:input path="estadoSolicitud" class="form-control" type="text" readonly="true"/></div>
+                 </div>    
+                 <div class="form-row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="cliente-input-field">Cliente</label></div>
+                    <div class="col-sm-6 input-column"><form:input path="rutCli" class="form-control" type="text" readonly="true"/></div>
                 </div>            
                 <button class="btn btn-primary submit-button mb-3" type="submit" >Modificar</button>
                 </form:form>

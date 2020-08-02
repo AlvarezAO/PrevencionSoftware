@@ -33,11 +33,10 @@
                   </div>
                 </div>
               </div>
-              
               <div class="panel-body table-responsive">
                 <table class="table table-striped table-bordered table-list ">
                   <thead>
-                    <tr>
+					<tr>
                         <th><em class="fa fa-cog"></em>Acciones</th>
                         <th>Id</th>
 						<th>Detalle</th>

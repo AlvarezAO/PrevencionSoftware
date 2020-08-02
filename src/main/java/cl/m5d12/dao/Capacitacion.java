@@ -1,8 +1,6 @@
 package cl.m5d12.dao;
 
-import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -10,13 +8,11 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Capacitacion.findAll", query="SELECT c FROM Capacitacion c")
-public class Capacitacion implements Serializable {
-	private static final long serialVersionUID = 1L;
-
+public class Capacitacion  {
+	
 	@Id
-	@SequenceGenerator(name = "idCapaGenerator", sequenceName = "CAPACITACION_SEQ")
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "idCapaGenerator")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Capacitacion_generator")
+	@SequenceGenerator(name="Capacitacion_generator", sequenceName = "CAPACITACION_SEQ")
 	@Column(name="ID_CAPA")
 	private int idCapa;
 
@@ -33,24 +29,15 @@ public class Capacitacion implements Serializable {
 	private String nombreCapa;
 
 	@Column(name="RUT_CLI")
-	private int rutCli;
+	private String rutCli;
 
 	//Constructor
 	public Capacitacion() {
-		
-	}
-
-	public Capacitacion(int idCapa, String detalleCapa, String fechaCapa, String nombreCapa, int rutCli) {
 		super();
-		this.idCapa = idCapa;
-		this.detalleCapa = detalleCapa;
-		this.fechaCapa = fechaCapa;
-		this.nombreCapa = nombreCapa;
-		this.rutCli = rutCli;
 	}
 
 	public Capacitacion(int idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa,
-			int rutCli) {
+			String rutCli) {
 		super();
 		this.idCapa = idCapa;
 		this.detalleCapa = detalleCapa;
@@ -102,16 +89,14 @@ public class Capacitacion implements Serializable {
 		this.nombreCapa = nombreCapa;
 	}
 
-	public int getRutCli() {
+	public String getRutCli() {
 		return rutCli;
 	}
 
-	public void setRutCli(int rutCli) {
+	public void setRutCli(String rutCli) {
 		this.rutCli = rutCli;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}		
+		
 
 }

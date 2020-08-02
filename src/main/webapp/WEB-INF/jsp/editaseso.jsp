@@ -39,7 +39,7 @@
                     <div class="col-sm-6 input-column"><form:input path="nombreAseso" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Fecha Asesoria:</label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="fechaAseso-input-field">Fecha Asesoria:</label></div>
                     <div class="col-sm-6 input-column"><form:input path="fechaAseso" class="form-control" type="text" /></div>
                 </div>                 
                 <button class="btn btn-primary submit-button mb-3" type="submit" >Modificar</button>
