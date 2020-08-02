@@ -30,23 +30,22 @@ public class Asesoria implements Serializable {
 	@Column(name="NOMBRE_ASESO")
 	private String nombreAseso;
 
-	//bi-directional many-to-one association to Cliente
-	@ManyToOne
-	@JoinColumn(name="RUT_CLI")
-	private Cliente cliente;
-
-	//bi-directional many-to-one association to Visita
-	@OneToMany	(mappedBy="asesoria", fetch=FetchType.EAGER)
-	private List<Visita> visitas;
+	
 
 	
 	//Constructor
 	public Asesoria() {
 		
-	}	
+	}		
 
-	
-	
+	public Asesoria(long idAseso, String detalleAseso, String fechaAseso, String nombreAseso) {
+		super();
+		this.idAseso = idAseso;
+		this.detalleAseso = detalleAseso;
+		this.fechaAseso = fechaAseso;
+		this.nombreAseso = nombreAseso;
+	}
+
 	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso) {
 		super();
 		this.idAseso = idAseso;
@@ -55,33 +54,11 @@ public class Asesoria implements Serializable {
 		this.fechaAseso = fechaAseso;
 		this.nombreAseso = nombreAseso;
 	}
-
-	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso,
-			Cliente cliente) {
-		super();
-		this.idAseso = idAseso;
-		this.detalleAseso = detalleAseso;
-		this.estadoSolicitud = estadoSolicitud;
-		this.fechaAseso = fechaAseso;
-		this.nombreAseso = nombreAseso;
-		this.cliente = cliente;
-	}	
-
-	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso,
-			Cliente cliente, List<Visita> visitas) {
-		super();
-		this.idAseso = idAseso;
-		this.detalleAseso = detalleAseso;
-		this.estadoSolicitud = estadoSolicitud;
-		this.fechaAseso = fechaAseso;
-		this.nombreAseso = nombreAseso;
-		this.cliente = cliente;
-		this.visitas = visitas;
-	}
-
+	
 	//Getters and Setters
+
 	public long getIdAseso() {
-		return this.idAseso;
+		return idAseso;
 	}
 
 	public void setIdAseso(long idAseso) {
@@ -89,7 +66,7 @@ public class Asesoria implements Serializable {
 	}
 
 	public String getDetalleAseso() {
-		return this.detalleAseso;
+		return detalleAseso;
 	}
 
 	public void setDetalleAseso(String detalleAseso) {
@@ -97,7 +74,7 @@ public class Asesoria implements Serializable {
 	}
 
 	public String getEstadoSolicitud() {
-		return this.estadoSolicitud;
+		return estadoSolicitud;
 	}
 
 	public void setEstadoSolicitud(String estadoSolicitud) {
@@ -105,7 +82,7 @@ public class Asesoria implements Serializable {
 	}
 
 	public String getFechaAseso() {
-		return this.fechaAseso;
+		return fechaAseso;
 	}
 
 	public void setFechaAseso(String fechaAseso) {
@@ -113,41 +90,15 @@ public class Asesoria implements Serializable {
 	}
 
 	public String getNombreAseso() {
-		return this.nombreAseso;
+		return nombreAseso;
 	}
 
 	public void setNombreAseso(String nombreAseso) {
 		this.nombreAseso = nombreAseso;
 	}
 
-	public Cliente getCliente() {
-		return this.cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public List<Visita> getVisitas() {
-		return this.visitas;
-	}
-
-	public void setVisitas(List<Visita> visitas) {
-		this.visitas = visitas;
-	}
-
-	public Visita addVisita(Visita visita) {
-		getVisitas().add(visita);
-		visita.setAsesoria(this);
-
-		return visita;
-	}
-
-	public Visita removeVisita(Visita visita) {
-		getVisitas().remove(visita);
-		visita.setAsesoria(null);
-
-		return visita;
-	}
-
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}	
+	
 }

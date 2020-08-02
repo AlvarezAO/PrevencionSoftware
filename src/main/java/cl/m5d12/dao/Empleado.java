@@ -28,14 +28,7 @@ public class Empleado implements Serializable {
 	@Column(name="NOMBRE_EMP")
 	private String nombreEmp;
 
-	//bi-directional many-to-one association to Login
-	@OneToMany(mappedBy="empleado")
-	private List<Login> logins;
-
-	//bi-directional many-to-one association to Visita
-	@OneToMany(mappedBy="empleado")
-	private List<Visita> visitas;
-
+	
 	
 	//Constructor
 	public Empleado() {
@@ -49,42 +42,19 @@ public class Empleado implements Serializable {
 		this.fonoEmp = fonoEmp;
 		this.nombreEmp = nombreEmp;
 	}
-
-
-	public Empleado(int rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
-			List<Login> logins) {
-		
-		this.rutEmp = rutEmp;
-		this.emailEmp = emailEmp;
-		this.fonoEmp = fonoEmp;
-		this.nombreEmp = nombreEmp;
-		this.logins = logins;
-	}
 	
-
-	public Empleado(int rutEmp, String emailEmp, BigDecimal fonoEmp, String nombreEmp,
-			List<Login> logins, List<Visita> visitas) {
-		
-		this.rutEmp = rutEmp;
-		this.emailEmp = emailEmp;
-		this.fonoEmp = fonoEmp;
-		this.nombreEmp = nombreEmp;
-		this.logins = logins;
-		this.visitas = visitas;
-	}
-
+	//Getters and Setters
 
 	public int getRutEmp() {
-		return this.rutEmp;
+		return rutEmp;
 	}
 
 	public void setRutEmp(int rutEmp) {
 		this.rutEmp = rutEmp;
 	}
 
-
 	public String getEmailEmp() {
-		return this.emailEmp;
+		return emailEmp;
 	}
 
 	public void setEmailEmp(String emailEmp) {
@@ -92,7 +62,7 @@ public class Empleado implements Serializable {
 	}
 
 	public BigDecimal getFonoEmp() {
-		return this.fonoEmp;
+		return fonoEmp;
 	}
 
 	public void setFonoEmp(BigDecimal fonoEmp) {
@@ -100,55 +70,15 @@ public class Empleado implements Serializable {
 	}
 
 	public String getNombreEmp() {
-		return this.nombreEmp;
+		return nombreEmp;
 	}
 
 	public void setNombreEmp(String nombreEmp) {
 		this.nombreEmp = nombreEmp;
 	}
 
-	public List<Login> getLogins() {
-		return this.logins;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
-
-	public void setLogins(List<Login> logins) {
-		this.logins = logins;
-	}
-
-	public Login addLogin(Login login) {
-		getLogins().add(login);
-		login.setEmpleado(this);
-
-		return login;
-	}
-
-	public Login removeLogin(Login login) {
-		getLogins().remove(login);
-		login.setEmpleado(null);
-
-		return login;
-	}
-
-	public List<Visita> getVisitas() {
-		return this.visitas;
-	}
-
-	public void setVisitas(List<Visita> visitas) {
-		this.visitas = visitas;
-	}
-
-	public Visita addVisita(Visita visita) {
-		getVisitas().add(visita);
-		visita.setEmpleado(this);
-
-		return visita;
-	}
-
-	public Visita removeVisita(Visita visita) {
-		getVisitas().remove(visita);
-		visita.setEmpleado(null);
-
-		return visita;
-	}
-
+	
 }

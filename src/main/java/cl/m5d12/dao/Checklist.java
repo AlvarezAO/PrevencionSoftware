@@ -22,36 +22,32 @@ public class Checklist implements Serializable {
 
 	private String estado;
 
-	//bi-directional many-to-one association to Visita
-	@ManyToOne
-	@JoinColumn(name="ID_VISITAS")
-	private Visita visita;
+	@Column(name="ID_VISITAS")
+	private int idVisitas;
 
 	
 	//Constructor
 	public Checklist() {
 		
-	}	
+	}
+	
+	public Checklist(long idChecklist, String detalleChequeo, int idVisitas) {
+		super();
+		this.idChecklist = idChecklist;
+		this.detalleChequeo = detalleChequeo;
+		this.idVisitas = idVisitas;
+	}
 
-	public Checklist(long idChecklist, String detalleChequeo, String estado) {
+	public Checklist(long idChecklist, String detalleChequeo, String estado, int idVisitas) {
 		super();
 		this.idChecklist = idChecklist;
 		this.detalleChequeo = detalleChequeo;
 		this.estado = estado;
+		this.idVisitas = idVisitas;
 	}
-	
-	public Checklist(long idChecklist, String detalleChequeo, String estado, Visita visita) {
-		super();
-		this.idChecklist = idChecklist;
-		this.detalleChequeo = detalleChequeo;
-		this.estado = estado;
-		this.visita = visita;
-	}
-	
-	//Getters and Setters
 
 	public long getIdChecklist() {
-		return this.idChecklist;
+		return idChecklist;
 	}
 
 	public void setIdChecklist(long idChecklist) {
@@ -59,7 +55,7 @@ public class Checklist implements Serializable {
 	}
 
 	public String getDetalleChequeo() {
-		return this.detalleChequeo;
+		return detalleChequeo;
 	}
 
 	public void setDetalleChequeo(String detalleChequeo) {
@@ -67,19 +63,24 @@ public class Checklist implements Serializable {
 	}
 
 	public String getEstado() {
-		return this.estado;
+		return estado;
 	}
 
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-	public Visita getVisita() {
-		return this.visita;
+	public int getIdVisitas() {
+		return idVisitas;
 	}
 
-	public void setVisita(Visita visita) {
-		this.visita = visita;
+	public void setIdVisitas(int idVisitas) {
+		this.idVisitas = idVisitas;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}		
+	
+		
 }

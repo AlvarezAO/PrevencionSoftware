@@ -2,7 +2,6 @@ package cl.m5d12.dao;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -30,57 +29,39 @@ public class Accidente implements Serializable {
 	@Column(name="NOMBRE_ACCIDENTE")
 	private String nombreAccidente;
 
-	//bi-directional many-to-one association to Cliente
-	@ManyToOne
-	@JoinColumn(name="RUT_CLI")
-	private Cliente cliente;
-
-	//bi-directional many-to-one association to Visita
-	@OneToMany(mappedBy="accidente")
-	private List<Visita> visitas;
+	@Column(name="RUT_CLI")
+	private int rutCli;
 
 	//Constructor
 	public Accidente() {
 		
-	}	
-
-	public Accidente(long idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
-			String nombreAccidente) {
+	}		
+	
+	public Accidente(long idAccidente, String detalleAccidente, String fechaAccidente, String nombreAccidente,
+			int rutCli) {
 		super();
 		this.idAccidente = idAccidente;
 		this.detalleAccidente = detalleAccidente;
-		this.estadoSolicitud = estadoSolicitud;
 		this.fechaAccidente = fechaAccidente;
 		this.nombreAccidente = nombreAccidente;
+		this.rutCli = rutCli;
 	}
 	
 	public Accidente(long idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
-			String nombreAccidente, Cliente cliente) {
+			String nombreAccidente, int rutCli) {
 		super();
 		this.idAccidente = idAccidente;
 		this.detalleAccidente = detalleAccidente;
 		this.estadoSolicitud = estadoSolicitud;
 		this.fechaAccidente = fechaAccidente;
 		this.nombreAccidente = nombreAccidente;
-		this.cliente = cliente;
-	}
-	
-	public Accidente(long idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
-			String nombreAccidente, Cliente cliente, List<Visita> visitas) {
-		super();
-		this.idAccidente = idAccidente;
-		this.detalleAccidente = detalleAccidente;
-		this.estadoSolicitud = estadoSolicitud;
-		this.fechaAccidente = fechaAccidente;
-		this.nombreAccidente = nombreAccidente;
-		this.cliente = cliente;
-		this.visitas = visitas;
+		this.rutCli = rutCli;
 	}
 	
 	//Getters and Setters
 
 	public long getIdAccidente() {
-		return this.idAccidente;
+		return idAccidente;
 	}
 
 	public void setIdAccidente(long idAccidente) {
@@ -88,7 +69,7 @@ public class Accidente implements Serializable {
 	}
 
 	public String getDetalleAccidente() {
-		return this.detalleAccidente;
+		return detalleAccidente;
 	}
 
 	public void setDetalleAccidente(String detalleAccidente) {
@@ -96,7 +77,7 @@ public class Accidente implements Serializable {
 	}
 
 	public String getEstadoSolicitud() {
-		return this.estadoSolicitud;
+		return estadoSolicitud;
 	}
 
 	public void setEstadoSolicitud(String estadoSolicitud) {
@@ -104,7 +85,7 @@ public class Accidente implements Serializable {
 	}
 
 	public String getFechaAccidente() {
-		return this.fechaAccidente;
+		return fechaAccidente;
 	}
 
 	public void setFechaAccidente(String fechaAccidente) {
@@ -112,41 +93,23 @@ public class Accidente implements Serializable {
 	}
 
 	public String getNombreAccidente() {
-		return this.nombreAccidente;
+		return nombreAccidente;
 	}
 
 	public void setNombreAccidente(String nombreAccidente) {
 		this.nombreAccidente = nombreAccidente;
 	}
 
-	public Cliente getCliente() {
-		return this.cliente;
+	public int getRutCli() {
+		return rutCli;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setRutCli(int rutCli) {
+		this.rutCli = rutCli;
 	}
 
-	public List<Visita> getVisitas() {
-		return this.visitas;
-	}
-
-	public void setVisitas(List<Visita> visitas) {
-		this.visitas = visitas;
-	}
-
-	public Visita addVisita(Visita visita) {
-		getVisitas().add(visita);
-		visita.setAccidente(this);
-
-		return visita;
-	}
-
-	public Visita removeVisita(Visita visita) {
-		getVisitas().remove(visita);
-		visita.setAccidente(null);
-
-		return visita;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

@@ -26,74 +26,50 @@ public class Visita implements Serializable {
 
 	private String fecha;
 
-	//bi-directional many-to-one association to Checklist
-	@OneToMany(mappedBy="visita")
-	private List<Checklist> checklists;
 
-	//bi-directional many-to-one association to Accidente
-	@ManyToOne
-	@JoinColumn(name="ID_ACCIDENTE")
-	private Accidente accidente;
+	@Column(name="ID_ACCIDENTE")
+	private int idAccidente;
 
-	//bi-directional many-to-one association to Asesoria
-	@ManyToOne
-	@JoinColumn(name="ID_ASESO")
-	private Asesoria asesoria;
+	@Column(name="ID_ASESO")
+	private int idAsesoria;
 
-	//bi-directional many-to-one association to Capacitacion
-	@ManyToOne
-	@JoinColumn(name="ID_CAPA")
-	private Capacitacion capacitacion;
+	@Column(name="ID_CAPA")
+	private int idCapacitacion;
 
-	//bi-directional many-to-one association to Empleado
-	@ManyToOne
-	@JoinColumn(name="RUT_EMP")
-	private Empleado empleado;
+	@Column(name="RUT_EMP")
+	private int idEmpleado;
 
 	
 	//Constructor
 	public Visita() {
 		
 	}
-	
-	public Visita(long idVisitas, String direccion, String fecha, List<Checklist> checklists, Accidente accidente,
-			Empleado empleado) {
-		super();
-		this.idVisitas = idVisitas;
-		this.direccion = direccion;
-		this.fecha = fecha;
-		this.checklists = checklists;
-		this.accidente = accidente;
-		this.empleado = empleado;
-	}
-	
-	public Visita(long idVisitas, BigDecimal cantAsistentes, String direccion, String fecha, List<Checklist> checklists,
-			Capacitacion capacitacion, Empleado empleado) {
+
+	public Visita(long idVisitas, BigDecimal cantAsistentes, String direccion, String fecha) {
 		super();
 		this.idVisitas = idVisitas;
 		this.cantAsistentes = cantAsistentes;
 		this.direccion = direccion;
 		this.fecha = fecha;
-		this.checklists = checklists;
-		this.capacitacion = capacitacion;
-		this.empleado = empleado;
 	}
-	
-	public Visita(long idVisitas, String direccion, String fecha, List<Checklist> checklists, Asesoria asesoria,
-			Empleado empleado) {
+
+	public Visita(long idVisitas, BigDecimal cantAsistentes, String direccion, String fecha, int idAccidente,
+			int idAsesoria, int idCapacitacion, int idEmpleado) {
 		super();
 		this.idVisitas = idVisitas;
+		this.cantAsistentes = cantAsistentes;
 		this.direccion = direccion;
 		this.fecha = fecha;
-		this.checklists = checklists;
-		this.asesoria = asesoria;
-		this.empleado = empleado;
+		this.idAccidente = idAccidente;
+		this.idAsesoria = idAsesoria;
+		this.idCapacitacion = idCapacitacion;
+		this.idEmpleado = idEmpleado;
 	}
 	
-	//Getters and Setters
+	// Getters and Setters
 
 	public long getIdVisitas() {
-		return this.idVisitas;
+		return idVisitas;
 	}
 
 	public void setIdVisitas(long idVisitas) {
@@ -101,7 +77,7 @@ public class Visita implements Serializable {
 	}
 
 	public BigDecimal getCantAsistentes() {
-		return this.cantAsistentes;
+		return cantAsistentes;
 	}
 
 	public void setCantAsistentes(BigDecimal cantAsistentes) {
@@ -109,7 +85,7 @@ public class Visita implements Serializable {
 	}
 
 	public String getDireccion() {
-		return this.direccion;
+		return direccion;
 	}
 
 	public void setDireccion(String direccion) {
@@ -117,65 +93,48 @@ public class Visita implements Serializable {
 	}
 
 	public String getFecha() {
-		return this.fecha;
+		return fecha;
 	}
 
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
-	public List<Checklist> getChecklists() {
-		return this.checklists;
+	public int getIdAccidente() {
+		return idAccidente;
 	}
 
-	public void setChecklists(List<Checklist> checklists) {
-		this.checklists = checklists;
+	public void setIdAccidente(int idAccidente) {
+		this.idAccidente = idAccidente;
 	}
 
-	public Checklist addChecklist(Checklist checklist) {
-		getChecklists().add(checklist);
-		checklist.setVisita(this);
-
-		return checklist;
+	public int getIdAsesoria() {
+		return idAsesoria;
 	}
 
-	public Checklist removeChecklist(Checklist checklist) {
-		getChecklists().remove(checklist);
-		checklist.setVisita(null);
-
-		return checklist;
+	public void setIdAsesoria(int idAsesoria) {
+		this.idAsesoria = idAsesoria;
 	}
 
-	public Accidente getAccidente() {
-		return this.accidente;
+	public int getIdCapacitacion() {
+		return idCapacitacion;
 	}
 
-	public void setAccidente(Accidente accidente) {
-		this.accidente = accidente;
+	public void setIdCapacitacion(int idCapacitacion) {
+		this.idCapacitacion = idCapacitacion;
 	}
 
-	public Asesoria getAsesoria() {
-		return this.asesoria;
+	public int getIdEmpleado() {
+		return idEmpleado;
 	}
 
-	public void setAsesoria(Asesoria asesoria) {
-		this.asesoria = asesoria;
+	public void setIdEmpleado(int idEmpleado) {
+		this.idEmpleado = idEmpleado;
 	}
 
-	public Capacitacion getCapacitacion() {
-		return this.capacitacion;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
-	public void setCapacitacion(Capacitacion capacitacion) {
-		this.capacitacion = capacitacion;
-	}
-
-	public Empleado getEmpleado() {
-		return this.empleado;
-	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
-	}
-
+		
 }
