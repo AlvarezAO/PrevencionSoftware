@@ -12,7 +12,7 @@ public class Pago  {
 
 	@Id
 	@Column(name="ID_PAGO")
-	private long idPago;
+	private int idPago;
 
 	@Column(name="FECHA_PAGO")
 	private String fechaPago;
@@ -34,7 +34,7 @@ public class Pago  {
 		
 	}
 
-	public Pago(long idPago, String fechaPago, String fechaVencimiento, int montoPagado, int montoTotal,
+	public Pago(int idPago, String fechaPago, String fechaVencimiento, int montoPagado, int montoTotal,
 			int rutCli) {
 		super();
 		this.idPago = idPago;
@@ -49,13 +49,13 @@ public class Pago  {
 	//Getters and Setters
 
 
-	public long getIdPago() {
+	public int getIdPago() {
 		return idPago;
 	}
 
 
 
-	public void setIdPago(long idPago) {
+	public void setIdPago(int idPago) {
 		this.idPago = idPago;
 	}
 

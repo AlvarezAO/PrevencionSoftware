@@ -44,7 +44,7 @@
                     <li class="nav-item" role="presentation"></li>
                 	<li class="nav-item" role="presentation"><a class="nav-link" href="#">Reportes</a></li>
                     <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pagos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="${pageContext.request.contextPath}/listarpagos">Pagos</a></li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="logout">Salir</a></li>
                     <li class="nav-item" role="presentation"></li>

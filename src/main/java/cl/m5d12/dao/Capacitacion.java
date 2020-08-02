@@ -12,7 +12,7 @@ public class Capacitacion  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "capacitacion_generator")
-	@SequenceGenerator(name="capacitacion_generator", sequenceName = "CAPACITACION_SEQ2")
+	@SequenceGenerator(name="capacitacion_generator", sequenceName = "CAPACITACION_SEQ")
 	@Column(name="ID_CAPA")
 	private int idCapa;
 
