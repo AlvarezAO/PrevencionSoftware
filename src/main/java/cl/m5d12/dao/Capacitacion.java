@@ -11,8 +11,8 @@ import javax.persistence.*;
 public class Capacitacion  {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Capacitacion_generator")
-	@SequenceGenerator(name="Capacitacion_generator", sequenceName = "CAPACITACION_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "capacitacion_generator")
+	@SequenceGenerator(name="capacitacion_generator", sequenceName = "CAPACITACION_SEQ2")
 	@Column(name="ID_CAPA")
 	private int idCapa;
 

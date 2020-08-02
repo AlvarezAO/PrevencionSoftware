@@ -6,7 +6,7 @@ import cl.m5d12.dao.Capacitacion;
 
 public interface CapacitacionServicio {
 	
-	Capacitacion findCapacitacionByid(int idCapa);
+	Capacitacion findCapacitacionByid(long idCapa);
 	List<Capacitacion> listacapacitacion();
 	void addCapa(Capacitacion cap);
 	void deleteCapa(int idCapa);
