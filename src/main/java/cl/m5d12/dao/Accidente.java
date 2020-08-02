@@ -14,6 +14,8 @@ public class Accidente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accidente_generator")
+	@SequenceGenerator(name="accidente_generator", sequenceName = "ACCIDENTE_SEQ")
 	@Column(name="ID_ACCIDENTE")
 	private int idAccidente;
 
