@@ -29,6 +29,7 @@ public class AsesoriaControlador {
 	public String verasesorias(Model m) {
 		List<Asesoria> listaasesorias = as.listaAseso();
 		m.addAttribute("lasesorias", listaasesorias);
+		log.info("Se ha visto lista asesoria");
 		return "listadoasesorias";
 	}
 	
@@ -39,12 +40,14 @@ public class AsesoriaControlador {
 		int username = Integer.parseInt(name);
 		mo.addAttribute("id", username);
 		m.addAttribute("command", new Asesoria());
+		log.info("Crea formulario asesoria");
 		return "asesoform";
 	}
 	
 	@RequestMapping(value="/eliminaaseso/{idAseso}")
 	public String eliminaaseso(@PathVariable int idAseso) {
 		as.deleteAsesoria(idAseso);
+		log.info("Elimina formulario asesoria");
 		return "redirect:/listarasesorias";
 	}
 	
@@ -52,12 +55,14 @@ public class AsesoriaControlador {
 	public String editaAseso(@PathVariable int idAseso, Model modelo) {
 	Asesoria ases = as.findAsesoriaByid(idAseso);
 	modelo.addAttribute("command", ases);
+	log.info("Crea edicion formulario asesoria");
 	return "editaseso";	
 	}
 	
 	@RequestMapping(value="/changeaseso", method= RequestMethod.POST)
 	public String cambiadatosaseso(Asesoria ase) {
 		as.updateAsesoria(ase);
+		log.info("Realiza cambio en asesoria " + ase);
 		return "redirect:/listarasesorias";
 	}
 	
@@ -65,6 +70,7 @@ public class AsesoriaControlador {
 	@RequestMapping(value="/guardaAseso", method=RequestMethod.POST)
 	public String guardaAse(@ModelAttribute("Ase") Asesoria ase) {
 		as.addAsesoria(ase);
+		log.info("Guarda nuevo formulario asesoria");
 		return "redirect:/listarasesorias";
 	}
 	

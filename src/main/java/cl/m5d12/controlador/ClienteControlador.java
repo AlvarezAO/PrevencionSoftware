@@ -29,12 +29,14 @@ public class ClienteControlador {
 	public String verclientes(Model m) {
 		List<Cliente> listacliente = cs.listaCliente();
 		m.addAttribute("lclientes",listacliente);
+		log.info("Ha visto lista clientes");
 		return "listadoclientes";
 	}
 	
     @RequestMapping("/cliform")    
     public String showform(Model m){
         m.addAttribute("command", new Cliente());
+        log.info("Crea formulario cliente");
         return "cliform";
     } 
     
@@ -46,6 +48,7 @@ public class ClienteControlador {
     @RequestMapping(value="/save",method = RequestMethod.POST)    
     public String save(@ModelAttribute("cli") Cliente cli){    
         cs.addCliente(cli);
+        log.info("Guarda nuevo cliente");
         return "redirect:/listarclientes";
     }
     	
@@ -53,6 +56,7 @@ public class ClienteControlador {
     public String error(ModelMap model)
     {
         model.addAttribute("error", "true");
+        log.info("Error de logueo");
         return "login";
 
     }
@@ -60,7 +64,8 @@ public class ClienteControlador {
     @RequestMapping("/login")
     public String login()
     {
-        System.out.println("Inside login");
+        
+        log.info("Nueva conexion");
         return "login";
     }
     
@@ -77,20 +82,22 @@ public class ClienteControlador {
     @RequestMapping(value="/eliminarusuario/{rutCli}")
 	public String eliminaUser(@PathVariable int rutCli) {
 		cs.deleteCliente(rutCli);
+		log.info("Se ha eliminado un usuario " + rutCli);
 		return "redirect:/listarclientes";
 	}
 	
 	@RequestMapping(value="/editusuario/{rutCli}")
 		public String editaUser(@PathVariable int rutCli, Model modelo) {
 		Cliente cli = cs.findClienteByid(rutCli);
-		log.info("Ingresao a editar usuario");
 		modelo.addAttribute("command", cli);
+		log.info("Editando a "+rutCli);
 		return "editarcliente";
 	}
 	
 	@RequestMapping(value="/guardacambio", method = RequestMethod.POST) 
     public String guardaCambio(Cliente cli){
         cs.updateCliente(cli);
+        log.info("Nuevo usuario creado");
 		return "redirect:/listarclientes";
     }
 
