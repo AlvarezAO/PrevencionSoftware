@@ -31,74 +31,105 @@ public class Pago implements Serializable {
 	private BigDecimal montoTotal;
 
 	//bi-directional many-to-one association to Cliente
-	@ManyToOne
-	@JoinColumn(name="RUT_CLI")
-	private Cliente cliente;
+	@Column(name="RUT_CLI")
+	private int rutCli;
 
 	//Constructor
 	public Pago() {
 		
 	}
 
+	
+
 	public Pago(long idPago, String fechaPago, String fechaVencimiento, BigDecimal montoPagado, BigDecimal montoTotal,
-			Cliente cliente) {
+			int rutCli) {
 		super();
 		this.idPago = idPago;
 		this.fechaPago = fechaPago;
 		this.fechaVencimiento = fechaVencimiento;
 		this.montoPagado = montoPagado;
 		this.montoTotal = montoTotal;
-		this.cliente = cliente;
+		this.rutCli = rutCli;
 	}
+
 
 	//Getters and Setters
 
+
 	public long getIdPago() {
-		return this.idPago;
+		return idPago;
 	}
+
+
 
 	public void setIdPago(long idPago) {
 		this.idPago = idPago;
 	}
 
+
+
 	public String getFechaPago() {
-		return this.fechaPago;
+		return fechaPago;
 	}
+
+
 
 	public void setFechaPago(String fechaPago) {
 		this.fechaPago = fechaPago;
 	}
 
+
+
 	public String getFechaVencimiento() {
-		return this.fechaVencimiento;
+		return fechaVencimiento;
 	}
+
+
 
 	public void setFechaVencimiento(String fechaVencimiento) {
 		this.fechaVencimiento = fechaVencimiento;
 	}
 
+
+
 	public BigDecimal getMontoPagado() {
-		return this.montoPagado;
+		return montoPagado;
 	}
+
+
 
 	public void setMontoPagado(BigDecimal montoPagado) {
 		this.montoPagado = montoPagado;
 	}
 
+
+
 	public BigDecimal getMontoTotal() {
-		return this.montoTotal;
+		return montoTotal;
 	}
+
+
 
 	public void setMontoTotal(BigDecimal montoTotal) {
 		this.montoTotal = montoTotal;
 	}
 
-	public Cliente getCliente() {
-		return this.cliente;
+
+
+	public int getRutCli() {
+		return rutCli;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+
+
+	public void setRutCli(int rutCli) {
+		this.rutCli = rutCli;
 	}
 
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

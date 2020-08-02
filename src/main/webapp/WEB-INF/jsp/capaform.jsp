@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-input-field">ID Cliente: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="cliente" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="rutCli" value="${id}" class="form-control" type="text" readonly="true" /></div>
                 </div>
                 
                 

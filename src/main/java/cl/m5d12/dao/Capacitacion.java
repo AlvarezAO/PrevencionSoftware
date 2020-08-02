@@ -15,8 +15,10 @@ public class Capacitacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@SequenceGenerator(name = "idCapaGenerator", sequenceName = "CAPACITACION_SEQ")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "idCapaGenerator")
 	@Column(name="ID_CAPA")
-	private long idCapa;
+	private int idCapa;
 
 	@Column(name="DETALLE_CAPA")
 	private String detalleCapa;
@@ -30,73 +32,46 @@ public class Capacitacion implements Serializable {
 	@Column(name="NOMBRE_CAPA")
 	private String nombreCapa;
 
-	//bi-directional many-to-one association to Cliente
-	@ManyToOne
-	@JoinColumn(name="RUT_CLI", referencedColumnName="RUT_CLI")
-	private Cliente cliente;
-
-	//bi-directional many-to-one association to Visita
-	@OneToMany(mappedBy="capacitacion")
-	private List<Visita> visitas;
+	@Column(name="RUT_CLI")
+	private int rutCli;
 
 	//Constructor
 	public Capacitacion() {
 		
-	}	
+	}
 
-	public Capacitacion(long idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa) {
+	public Capacitacion(int idCapa, String detalleCapa, String fechaCapa, String nombreCapa, int rutCli) {
+		super();
+		this.idCapa = idCapa;
+		this.detalleCapa = detalleCapa;
+		this.fechaCapa = fechaCapa;
+		this.nombreCapa = nombreCapa;
+		this.rutCli = rutCli;
+	}
+
+	public Capacitacion(int idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa,
+			int rutCli) {
 		super();
 		this.idCapa = idCapa;
 		this.detalleCapa = detalleCapa;
 		this.estadoSolicitud = estadoSolicitud;
 		this.fechaCapa = fechaCapa;
 		this.nombreCapa = nombreCapa;
+		this.rutCli = rutCli;
 	}
-
-	public Capacitacion(long idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa,
-			Cliente cliente) {
-		super();
-		this.idCapa = idCapa;
-		this.detalleCapa = detalleCapa;
-		this.estadoSolicitud = estadoSolicitud;
-		this.fechaCapa = fechaCapa;
-		this.nombreCapa = nombreCapa;
-		this.cliente = cliente;
-	}	
-
-	public Capacitacion(long idCapa, String detalleCapa, String estadoSolicitud, String fechaCapa, String nombreCapa,
-			Cliente cliente, List<Visita> visitas) {
-		super();
-		this.idCapa = idCapa;
-		this.detalleCapa = detalleCapa;
-		this.estadoSolicitud = estadoSolicitud;
-		this.fechaCapa = fechaCapa;
-		this.nombreCapa = nombreCapa;
-		this.cliente = cliente;
-		this.visitas = visitas;
-	}
-		
-	public Capacitacion(long idCapa, String detalleCapa, String fechaCapa, String nombreCapa, Cliente cliente) {
-		super();
-		this.idCapa = idCapa;
-		this.detalleCapa = detalleCapa;
-		this.fechaCapa = fechaCapa;
-		this.nombreCapa = nombreCapa;
-		this.cliente = cliente;
-	}
-
+	
 	//Getters and Setters
 
-	public long getIdCapa() {
-		return this.idCapa;
+	public long getidCapa() {
+		return idCapa;
 	}
 
-	public void setIdCapa(long idCapa) {
+	public void setidCapa(int idCapa) {
 		this.idCapa = idCapa;
 	}
 
 	public String getDetalleCapa() {
-		return this.detalleCapa;
+		return detalleCapa;
 	}
 
 	public void setDetalleCapa(String detalleCapa) {
@@ -104,7 +79,7 @@ public class Capacitacion implements Serializable {
 	}
 
 	public String getEstadoSolicitud() {
-		return this.estadoSolicitud;
+		return estadoSolicitud;
 	}
 
 	public void setEstadoSolicitud(String estadoSolicitud) {
@@ -112,7 +87,7 @@ public class Capacitacion implements Serializable {
 	}
 
 	public String getFechaCapa() {
-		return this.fechaCapa;
+		return fechaCapa;
 	}
 
 	public void setFechaCapa(String fechaCapa) {
@@ -120,41 +95,23 @@ public class Capacitacion implements Serializable {
 	}
 
 	public String getNombreCapa() {
-		return this.nombreCapa;
+		return nombreCapa;
 	}
 
 	public void setNombreCapa(String nombreCapa) {
 		this.nombreCapa = nombreCapa;
 	}
 
-	public Cliente getCliente() {
-		return this.cliente;
+	public int getRutCli() {
+		return rutCli;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setRutCli(int rutCli) {
+		this.rutCli = rutCli;
 	}
 
-	public List<Visita> getVisitas() {
-		return this.visitas;
-	}
-
-	public void setVisitas(List<Visita> visitas) {
-		this.visitas = visitas;
-	}
-
-	public Visita addVisita(Visita visita) {
-		getVisitas().add(visita);
-		visita.setCapacitacion(this);
-
-		return visita;
-	}
-
-	public Visita removeVisita(Visita visita) {
-		getVisitas().remove(visita);
-		visita.setCapacitacion(null);
-
-		return visita;
-	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}		
 
 }

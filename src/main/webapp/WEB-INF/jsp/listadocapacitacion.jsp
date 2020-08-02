@@ -51,15 +51,15 @@
                   <c:forEach items="${listcapa}" var="lista">
                           <tr>
                             <td align="center">
-                              <a class="btn btn-primary mb-1" title="Editar asesoria" href="editacapa/${listcapa.idCapa}"><em class="fa fa-pencil xs"></em></a>
-                              <a class="btn btn-danger mb-1" title="Eliminar asesoria" href="eliminacapa/${listcapa.idCapa}"><em class="fa fa-trash xs"></em></a>
+                              <a class="btn btn-primary mb-1" title="Editar asesoria" href="editacapa/${lista.idCapa}"><em class="fa fa-pencil xs"></em></a>
+                              <a class="btn btn-danger mb-1" title="Eliminar asesoria" href="eliminacapa/${lista.idCapa}"><em class="fa fa-trash xs"></em></a>
                             </td>
-                            <td class="align-middle">${listcapa.idCapa}</td>
-							<td class="align-middle">${listcapa.nombreCapa}</td>
-							<td class="align-middle">${listcapa.detalleCapa}</td>
-							<td class="align-middle">${listcapa.fechaCapa}</td>
-							<td class="align-middle">${listcapa.estadoSolicitud}</td>
-							<td class="align-middle">${listcapa.cliente}</td>
+                            <td class="align-middle">${lista.idCapa}</td>
+							<td class="align-middle">${lista.nombreCapa}</td>
+							<td class="align-middle">${lista.detalleCapa}</td>
+							<td class="align-middle">${lista.fechaCapa}</td>
+							<td class="align-middle">${lista.estadoSolicitud}</td>
+							<td class="align-middle">${lista.rutCli}</td>
 					        </tr>
                     </c:forEach>
                    </tbody>

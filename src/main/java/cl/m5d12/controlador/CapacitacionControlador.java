@@ -41,32 +41,20 @@ public class CapacitacionControlador {
 	}
 	
 	@RequestMapping("/capaform")
-	public String showCapaForm(Model m, Model mo, HttpServletRequest request) {
-		
+	public String showCapaForm(Model m, Model mo, HttpServletRequest request) {		
 		Principal principal = request.getUserPrincipal(); 
 		String name = principal.getName();
 		int username = Integer.parseInt(name);
 		
-		Capacitacion newCapa = new Capacitacion();
-		Cliente buscacli = clis.findClienteByid(username);
-		
-		newCapa.setCliente(buscacli);
-		
-		mo.addAttribute("cliente", username);
-		m.addAttribute("command", newCapa);
+		mo.addAttribute("id", username);
+		m.addAttribute("command", new Capacitacion());
 		
 		return "capaform";		
 	}
 	
 	@RequestMapping("/savecapa")
 	public String guardaCapa( Capacitacion capa, HttpServletRequest request) {
-		Principal principal = request.getUserPrincipal(); 
-		String name = principal.getName();
-		int username = Integer.parseInt(name);
 		
-		Cliente buscacli = clis.findClienteByid(username);
-		System.out.println(buscacli.getRutCli());
-		capa.setCliente(buscacli);
 		capaser.addCapa(capa);
 		return "redirect:/listarcapa";
 	}
