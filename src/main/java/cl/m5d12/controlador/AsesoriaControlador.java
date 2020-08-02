@@ -16,16 +16,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import cl.m5d12.dao.Asesoria;
 import cl.m5d12.servicio.AsesoriaServicio;
-import cl.m5d12.servicio.ClienteServicio;
 
 @Controller
 public class AsesoriaControlador {
 
 	@Autowired
 	AsesoriaServicio as;
-	
-	@Autowired
-	ClienteServicio Clis;
 	
 	Logger log = Logger.getLogger(AsesoriaControlador.class.getName());
 	
