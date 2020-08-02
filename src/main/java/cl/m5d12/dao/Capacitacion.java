@@ -49,7 +49,7 @@ public class Capacitacion  {
 	
 	//Getters and Setters
 
-	public long getidCapa() {
+	public int getidCapa() {
 		return idCapa;
 	}
 

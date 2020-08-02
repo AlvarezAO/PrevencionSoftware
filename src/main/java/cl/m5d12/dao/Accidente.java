@@ -15,7 +15,7 @@ public class Accidente implements Serializable {
 
 	@Id
 	@Column(name="ID_ACCIDENTE")
-	private long idAccidente;
+	private int idAccidente;
 
 	@Column(name="DETALLE_ACCIDENTE")
 	private String detalleAccidente;
@@ -37,7 +37,7 @@ public class Accidente implements Serializable {
 		
 	}		
 	
-	public Accidente(long idAccidente, String detalleAccidente, String fechaAccidente, String nombreAccidente,
+	public Accidente(int idAccidente, String detalleAccidente, String fechaAccidente, String nombreAccidente,
 			int rutCli) {
 		super();
 		this.idAccidente = idAccidente;
@@ -47,7 +47,7 @@ public class Accidente implements Serializable {
 		this.rutCli = rutCli;
 	}
 	
-	public Accidente(long idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
+	public Accidente(int idAccidente, String detalleAccidente, String estadoSolicitud, String fechaAccidente,
 			String nombreAccidente, int rutCli) {
 		super();
 		this.idAccidente = idAccidente;
@@ -60,11 +60,11 @@ public class Accidente implements Serializable {
 	
 	//Getters and Setters
 
-	public long getIdAccidente() {
+	public int getIdAccidente() {
 		return idAccidente;
 	}
 
-	public void setIdAccidente(long idAccidente) {
+	public void setIdAccidente(int idAccidente) {
 		this.idAccidente = idAccidente;
 	}
 
