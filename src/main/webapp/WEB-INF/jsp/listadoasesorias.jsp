@@ -52,8 +52,8 @@
                   <c:forEach items="${lasesorias}" var="lista">
                           <tr>
                             <td align="center">
-                              <a class="btn btn-primary mb-1" title="Editar asesoria" href="editAsesoria/${lista.idAseso}"><em class="fa fa-pencil xs"></em></a>
-                              <a class="btn btn-danger mb-1" title="Eliminar asesoria" href="eliminaaseso/${lista.idAseso}"><em class="fa fa-trash xs"></em></a>
+                              <a class="btn btn-primary mb-1" title="Editar asesoria" href="${pageContext.request.contextPath}/editAsesoria/${lista.idAseso}"><em class="fa fa-pencil xs"></em></a>
+                              <a class="btn btn-danger mb-1" title="Eliminar asesoria" href="${pageContext.request.contextPath}/eliminaaseso/${lista.idAseso}"><em class="fa fa-trash xs"></em></a>
                             </td>
                             <td class="align-middle">${lista.idAseso}</td>
 							<td class="align-middle">${lista.detalleAseso}</td>

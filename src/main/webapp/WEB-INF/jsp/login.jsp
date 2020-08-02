@@ -9,6 +9,9 @@
  }
  %>
  
+ <% Cookie miCookie=null;
+    String rutusuario = request.getParameter("username");%>
+ 
  <style>      
     body{
     	
