@@ -17,10 +17,10 @@ public class Visita implements Serializable {
 
 	@Id
 	@Column(name="ID_VISITAS")
-	private long idVisitas;
+	private int idVisitas;
 
 	@Column(name="CANT_ASISTENTES")
-	private BigDecimal cantAsistentes;
+	private int cantAsistentes;
 
 	private String direccion;
 
@@ -45,7 +45,7 @@ public class Visita implements Serializable {
 		
 	}
 
-	public Visita(long idVisitas, BigDecimal cantAsistentes, String direccion, String fecha) {
+	public Visita(int idVisitas, int cantAsistentes, String direccion, String fecha) {
 		super();
 		this.idVisitas = idVisitas;
 		this.cantAsistentes = cantAsistentes;
@@ -53,7 +53,7 @@ public class Visita implements Serializable {
 		this.fecha = fecha;
 	}
 
-	public Visita(long idVisitas, BigDecimal cantAsistentes, String direccion, String fecha, int idAccidente,
+	public Visita(int idVisitas, int cantAsistentes, String direccion, String fecha, int idAccidente,
 			int idAsesoria, int idCapacitacion, int idEmpleado) {
 		super();
 		this.idVisitas = idVisitas;
@@ -68,19 +68,19 @@ public class Visita implements Serializable {
 	
 	// Getters and Setters
 
-	public long getIdVisitas() {
+	public int getIdVisitas() {
 		return idVisitas;
 	}
 
-	public void setIdVisitas(long idVisitas) {
+	public void setIdVisitas(int idVisitas) {
 		this.idVisitas = idVisitas;
 	}
 
-	public BigDecimal getCantAsistentes() {
+	public int getCantAsistentes() {
 		return cantAsistentes;
 	}
 
-	public void setCantAsistentes(BigDecimal cantAsistentes) {
+	public void setCantAsistentes(int cantAsistentes) {
 		this.cantAsistentes = cantAsistentes;
 	}
 

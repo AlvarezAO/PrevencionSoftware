@@ -26,7 +26,7 @@ public class EmpleadoControlador {
 	        m.addAttribute("command", new Empleado());
 	        return "empform";
 	    } 
-	 
+	 	 
 	 @RequestMapping("/listarempleados")
 	 public String showListPro(Model m) {
 		 List<Empleado> listPro = es.listaEmpleado();

@@ -10,6 +10,6 @@ public class SolicitudControlador {
 	public String menuSoli() {
 		return "menusolicitudes";
 	}
-
+	
 	
 }

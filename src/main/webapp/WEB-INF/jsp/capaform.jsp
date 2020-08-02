@@ -22,19 +22,19 @@
                 <h1>AGREGAR NUEVA CAPACITACIÓN</h1>
                 <p></p>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Nombre: </label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Nombre Capacitación: </label></div>
                     <div class="col-sm-6 input-column"><form:input path="nombreCapa" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Detalle: </label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Detalle Capacitación: </label></div>
                     <div class="col-sm-6 input-column"><form:input path="detalleCapa" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Fecha Solicitada: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="fechaCapa" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="fechaCapa" class="form-control" type="date" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-input-field">ID Cliente: </label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-input-field">RUT Cliente: </label></div>
                     <div class="col-sm-6 input-column"><form:input path="rutCli" value="${id}" class="form-control" type="text" readonly="true" /></div>
                 </div>
                 
