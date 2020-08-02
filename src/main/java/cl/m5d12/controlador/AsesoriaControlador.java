@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 
 import cl.m5d12.dao.Asesoria;
-import cl.m5d12.dao.Cliente;
 import cl.m5d12.servicio.AsesoriaServicio;
 import cl.m5d12.servicio.ClienteServicio;
 
@@ -38,31 +37,13 @@ public class AsesoriaControlador {
 	}
 	
 	@RequestMapping("/asesoform")
-	public String mostarForm(Model m) {
-		  
+	public String mostarForm(Model m, Model mo, HttpServletRequest request) {
+		Principal principal = request.getUserPrincipal();
+		String name = principal.getName();
+		int username = Integer.parseInt(name);
+		mo.addAttribute("id", username);
 		m.addAttribute("command", new Asesoria());
 		return "asesoform";
-	}
-	
-	@RequestMapping(value="/guardaAseso", method=RequestMethod.POST)
-	public String guardaAse(@ModelAttribute("Ase") Asesoria ase) {
-		System.out.println(ase.getCliente());;
-		as.addAsesoria(ase);
-		return "redirect:/listarsesorias";
-	}
-	
-	@RequestMapping(value="/editAsesoria/{idAseso}")
-	public String editaAseso(@PathVariable("idAseso") long idAseso, Model modelo, HttpServletRequest request) {
-	Principal principal = request.getUserPrincipal();
-	String name = principal.getName();
-	int username = Integer.parseInt(name);		
-		
-	Asesoria ases = new Asesoria();
-	Cliente c = Clis.findClienteByid(username);
-	ases.setCliente(c);
-	modelo.addAttribute("cliente", c);
-	modelo.addAttribute("asesoria", ases);
-	return "editaseso";	
 	}
 	
 	@RequestMapping(value="/eliminaaseso/{idAseso}")
@@ -71,11 +52,27 @@ public class AsesoriaControlador {
 		return "redirect:/listarasesorias";
 	}
 	
+	@RequestMapping(value="/editAsesoria/{idAseso}")
+	public String editaAseso(@PathVariable int idAseso, Model modelo) {
+	Asesoria ases = as.findAsesoriaByid(idAseso);
+	modelo.addAttribute("command", ases);
+	return "editaseso";	
+	}
+	
 	@RequestMapping(value="/changeaseso", method= RequestMethod.POST)
 	public String cambiadatosaseso(Asesoria ase) {
 		as.updateAsesoria(ase);
-		return "redirect:/listarclientes";
+		return "redirect:/listarasesorias";
 	}
+	
+	
+	@RequestMapping(value="/guardaAseso", method=RequestMethod.POST)
+	public String guardaAse(@ModelAttribute("Ase") Asesoria ase) {
+		as.addAsesoria(ase);
+		return "redirect:/listarasesorias";
+	}
+	
+	
 	
 	
 }

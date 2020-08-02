@@ -16,8 +16,8 @@ public class AsesoriaImple implements AsesoriaServicio{
 	AsesoriaRepository as;
 
 	@Override
-	public Asesoria findClienteByid(long idAseso) {
-		return as.findOne((int) idAseso);
+	public Asesoria findAsesoriaByid(int idAseso) {
+		return as.findOne(idAseso);
 	}
 
 	@Override
@@ -32,8 +32,8 @@ public class AsesoriaImple implements AsesoriaServicio{
 	}
 
 	@Override
-	public void deleteAsesoria(long idAsesoria) {
-		as.delete((int) idAsesoria);
+	public void deleteAsesoria(int idAsesoria) {
+		as.delete(idAsesoria);
 		
 	}
 

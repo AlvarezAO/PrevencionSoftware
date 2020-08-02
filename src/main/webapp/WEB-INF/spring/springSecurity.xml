@@ -18,7 +18,6 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<intercept-url pattern="/empform" access="hasRole('ADMIN')" />
 		<intercept-url pattern="/listarempleados" access="hasRole('ADMIN')" />
 		<intercept-url pattern="/menusolicitudes" access="hasRole('USER')" />
-
 		<intercept-url pattern="/guardacambio" access="hasRole('ADMIN')" />
 
 		<form-login 

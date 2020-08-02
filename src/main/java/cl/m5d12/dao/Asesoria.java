@@ -1,8 +1,6 @@
 package cl.m5d12.dao;
 
-import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -10,16 +8,16 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Asesoria.findAll", query="SELECT a FROM Asesoria a")
-public class Asesoria implements Serializable {
-	private static final long serialVersionUID = 1L;
-
+public class Asesoria {
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "asesoria_generator")
+	@SequenceGenerator(name="asesoria_generator", sequenceName = "ASESORIA_SEQ")
 	@Column(name="ID_ASESO")
-	private long idAseso;
+	private int idAseso;
 
 	@Column(name="DETALLE_ASESO")
-	private String detalleAseso;
+	private String detalleAseso;	
 
 	@Column(name="ESTADO_SOLICITUD")
 	private String estadoSolicitud;
@@ -30,38 +28,33 @@ public class Asesoria implements Serializable {
 	@Column(name="NOMBRE_ASESO")
 	private String nombreAseso;
 
-	
+	@Column(name="RUT_CLI")
+	private String rutCli;
 
-	
 	//Constructor
+	
 	public Asesoria() {
-		
-	}		
-
-	public Asesoria(long idAseso, String detalleAseso, String fechaAseso, String nombreAseso) {
 		super();
-		this.idAseso = idAseso;
-		this.detalleAseso = detalleAseso;
-		this.fechaAseso = fechaAseso;
-		this.nombreAseso = nombreAseso;
 	}
 
-	public Asesoria(long idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso) {
+	public Asesoria(int idAseso, String detalleAseso, String estadoSolicitud, String fechaAseso, String nombreAseso,
+			String rutCli) {
 		super();
 		this.idAseso = idAseso;
 		this.detalleAseso = detalleAseso;
 		this.estadoSolicitud = estadoSolicitud;
 		this.fechaAseso = fechaAseso;
 		this.nombreAseso = nombreAseso;
+		this.rutCli = rutCli;
 	}
-	
-	//Getters and Setters
 
-	public long getIdAseso() {
+	//Getters and Setters
+	
+	public int getIdAseso() {
 		return idAseso;
 	}
 
-	public void setIdAseso(long idAseso) {
+	public void setIdAseso(int idAseso) {
 		this.idAseso = idAseso;
 	}
 
@@ -97,8 +90,16 @@ public class Asesoria implements Serializable {
 		this.nombreAseso = nombreAseso;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}	
+	public String getRutCli() {
+		return rutCli;
+	}
+
+	public void setRutCli(String rutCli) {
+		this.rutCli = rutCli;
+	}
+
+
+
 	
-}
+	
+}	

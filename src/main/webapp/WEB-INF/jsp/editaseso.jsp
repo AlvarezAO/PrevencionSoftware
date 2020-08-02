@@ -24,7 +24,7 @@
                 <p></p>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="id-input-field">Id Asesoria: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="idaseso" class="form-control" readonly="true" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="idAseso" class="form-control" type="number" readonly="true" /></div>
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="detalle-input-field" >Detalle: </label></div>
@@ -35,9 +35,13 @@
                     <div class="col-sm-6 input-column"><form:input path="estadoSolicitud" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Nombre Asesoria</label></div>
-                    <div class="col-sm-6 input-column"><form:input path="nombreASeso" class="form-control" type="text" /></div>
-                </div>                
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Nombre Asesoria:</label></div>
+                    <div class="col-sm-6 input-column"><form:input path="nombreAseso" class="form-control" type="text" /></div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Fecha Asesoria:</label></div>
+                    <div class="col-sm-6 input-column"><form:input path="fechaAseso" class="form-control" type="text" /></div>
+                </div>                 
                 <button class="btn btn-primary submit-button mb-3" type="submit" >Modificar</button>
                 </form:form>
         </div>

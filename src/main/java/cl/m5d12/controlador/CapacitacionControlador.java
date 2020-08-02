@@ -45,18 +45,9 @@ public class CapacitacionControlador {
 		Principal principal = request.getUserPrincipal(); 
 		String name = principal.getName();
 		int username = Integer.parseInt(name);
-		
 		mo.addAttribute("id", username);
 		m.addAttribute("command", new Capacitacion());
-		
 		return "capaform";		
-	}
-	
-	@RequestMapping("/savecapa")
-	public String guardaCapa( Capacitacion capa, HttpServletRequest request) {
-		
-		capaser.addCapa(capa);
-		return "redirect:/listarcapa";
 	}
 	
 	@RequestMapping(value="/eliminacapa/{idCapa}")
@@ -78,4 +69,9 @@ public class CapacitacionControlador {
 		return "redirect:/listarcapa";
 	}
 	
+	@RequestMapping("/savecapa")
+	public String guardaCapa( Capacitacion capa, HttpServletRequest request) {
+		capaser.addCapa(capa);
+		return "redirect:/listarcapa";
+	}
 }

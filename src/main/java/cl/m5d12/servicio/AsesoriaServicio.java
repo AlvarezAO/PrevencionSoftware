@@ -6,10 +6,10 @@ import cl.m5d12.dao.Asesoria;
 
 public interface AsesoriaServicio {
 
-	Asesoria findClienteByid(long idAseso);
+	Asesoria findAsesoriaByid(int idAseso);
 	List<Asesoria> listaAseso();
 	void addAsesoria(Asesoria Aseso);
-	void deleteAsesoria(long idAsesoria);
+	void deleteAsesoria(int idAsesoria);
 	void updateAsesoria(Asesoria Aseso);
 	
 }

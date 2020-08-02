@@ -22,7 +22,7 @@
             <form:form class="custom-form" method="post" action="guardaAseso">
                 <h1>AGREGAR NUEVA ASESORIA</h1>
                 <p></p>
-                 <div class="form-row form-group">
+                <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="detalle-input-field">Detalle Asesoria: </label></div>
                     <div class="col-sm-6 input-column"><form:input path="detalleAseso" class="form-control" type="text" /></div>
                 </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="rut_cli-input-field">Rut Cliente: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="cliente" class="form-control" type="text" readonly="true"  /></div>
+                    <div class="col-sm-6 input-column"><form:input path="rutCli" value="${id}" class="form-control" type="text" readonly="true"  /></div>
                 </div>
                 <button class="btn btn-primary submit-button mb-3" type="submit" >Guardar</button>
                 </form:form>
