@@ -1,18 +1,14 @@
 package cl.m5d12.dao;
 
-import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
-
 
 /**
  * The persistent class for the PAGO database table.
  * 
  */
 @Entity
-@NamedQuery(name="Pago.findAll", query="SELECT p FROM Pago p")
-public class Pago implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Pago  {
+	
 
 	@Id
 	@Column(name="ID_PAGO")
@@ -25,12 +21,11 @@ public class Pago implements Serializable {
 	private String fechaVencimiento;
 
 	@Column(name="MONTO_PAGADO")
-	private BigDecimal montoPagado;
+	private int montoPagado;
 
 	@Column(name="MONTO_TOTAL")
-	private BigDecimal montoTotal;
+	private int montoTotal;
 
-	//bi-directional many-to-one association to Cliente
 	@Column(name="RUT_CLI")
 	private int rutCli;
 
@@ -39,9 +34,7 @@ public class Pago implements Serializable {
 		
 	}
 
-	
-
-	public Pago(long idPago, String fechaPago, String fechaVencimiento, BigDecimal montoPagado, BigDecimal montoTotal,
+	public Pago(long idPago, String fechaPago, String fechaVencimiento, int montoPagado, int montoTotal,
 			int rutCli) {
 		super();
 		this.idPago = idPago;
@@ -92,25 +85,25 @@ public class Pago implements Serializable {
 
 
 
-	public BigDecimal getMontoPagado() {
+	public int getMontoPagado() {
 		return montoPagado;
 	}
 
 
 
-	public void setMontoPagado(BigDecimal montoPagado) {
+	public void setMontoPagado(int montoPagado) {
 		this.montoPagado = montoPagado;
 	}
 
 
 
-	public BigDecimal getMontoTotal() {
+	public int getMontoTotal() {
 		return montoTotal;
 	}
 
 
 
-	public void setMontoTotal(BigDecimal montoTotal) {
+	public void setMontoTotal(int montoTotal) {
 		this.montoTotal = montoTotal;
 	}
 
@@ -126,10 +119,4 @@ public class Pago implements Serializable {
 		this.rutCli = rutCli;
 	}
 
-
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
 }
