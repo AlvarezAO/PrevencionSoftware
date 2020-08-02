@@ -17,6 +17,7 @@ public class Checklist  {
 	@Column(name="DETALLE_CHEQUEO")
 	private String detalleChequeo;
 
+	@Column(name="ESTADO")
 	private String estado;
 
 	@Column(name="ID_VISITAS")
