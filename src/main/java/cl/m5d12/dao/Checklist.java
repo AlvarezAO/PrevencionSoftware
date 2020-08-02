@@ -1,21 +1,18 @@
 package cl.m5d12.dao;
 
-import java.io.Serializable;
 import javax.persistence.*;
-
-
 /**
  * The persistent class for the CHECKLIST database table.
  * 
  */
 @Entity
-@NamedQuery(name="Checklist.findAll", query="SELECT c FROM Checklist c")
-public class Checklist implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+public class Checklist  {
+	
 
 	@Id
 	@Column(name="ID_CHECKLIST")
-	private long idChecklist;
+	private int idChecklist;
 
 	@Column(name="DETALLE_CHEQUEO")
 	private String detalleChequeo;
@@ -31,14 +28,14 @@ public class Checklist implements Serializable {
 		
 	}
 	
-	public Checklist(long idChecklist, String detalleChequeo, int idVisitas) {
+	public Checklist(int idChecklist, String detalleChequeo, int idVisitas) {
 		super();
 		this.idChecklist = idChecklist;
 		this.detalleChequeo = detalleChequeo;
 		this.idVisitas = idVisitas;
 	}
 
-	public Checklist(long idChecklist, String detalleChequeo, String estado, int idVisitas) {
+	public Checklist(int idChecklist, String detalleChequeo, String estado, int idVisitas) {
 		super();
 		this.idChecklist = idChecklist;
 		this.detalleChequeo = detalleChequeo;
@@ -46,11 +43,11 @@ public class Checklist implements Serializable {
 		this.idVisitas = idVisitas;
 	}
 
-	public long getIdChecklist() {
+	public int getIdChecklist() {
 		return idChecklist;
 	}
 
-	public void setIdChecklist(long idChecklist) {
+	public void setIdChecklist(int idChecklist) {
 		this.idChecklist = idChecklist;
 	}
 
@@ -78,9 +75,7 @@ public class Checklist implements Serializable {
 		this.idVisitas = idVisitas;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}		
+			
 	
 		
 }
