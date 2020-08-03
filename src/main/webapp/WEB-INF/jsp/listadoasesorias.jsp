@@ -58,11 +58,15 @@
                     </c:forEach>
                    </tbody>
                 </table>
+               <div class="col-4 text-left">
+   				<a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+   				</div>
               </div>
   		</div>
  	 </div>
   </div>
   </div>
+  
    </sec:authorize>
    
    <sec:authorize access="hasRole('USER')">
@@ -105,10 +109,13 @@
                     </c:forEach>
                    </tbody>
                 </table>
+                <div class="col-4 text-left">
+   				<a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+   				</div>
               </div>
   		</div>
  	 </div>
   </div>
   </div>
-    </sec:authorize>
+  </sec:authorize>
  <%@include file="/footer.jsp" %> 

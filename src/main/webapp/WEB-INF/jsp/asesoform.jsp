@@ -3,18 +3,8 @@
 <%@ page session="true" %>
 <style>      
     body{
-        padding-top:60px;
-    }
-    /* fix padding under menu after resize */
-    @media screen and (max-width: 767px) {
-        body { padding-top: 60px; }
-    }
-    @media screen and (min-width:768px) and (max-width: 991px) {
-        body { padding-top: 110px; }
-    }
-    @media screen and (min-width: 992px) {
-        body { padding-top: 60px; }
-    }
+        padding-top:100px;
+        margin-top: 30px;
 </style>
 
 <div class="row register-form">

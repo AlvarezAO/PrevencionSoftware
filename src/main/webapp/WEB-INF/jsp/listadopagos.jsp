@@ -1,22 +1,6 @@
 <%@include file="/head.jsp" %>
 <%@include file="/nav.jsp" %>
-<style>      
-    body{
-        padding-top:60px;
-    }
-    /* fix padding under menu after resize */
-    @media screen and (max-width: 767px) {
-        body { padding-top: 60px; }
-    }
-    @media screen and (min-width:768px) and (max-width: 991px) {
-        body { padding-top: 110px; }
-    }
-    @media screen and (min-width: 992px) {
-        body { padding-top: 60px; }
-    }
-    
-    
-</style>
+   
 
 <div class="container">
     <div class="row">
@@ -62,11 +46,15 @@
                     </c:forEach>
                    </tbody>
                 </table>
+                <div class="col-4 text-left">
+   				<a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+   				</div>
               </div>
   		</div>
  	 </div>
   </div>
   </div>
+ 
    
 
 <%@include file="/footer.jsp" %>

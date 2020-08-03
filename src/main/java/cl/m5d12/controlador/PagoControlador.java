@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -57,21 +56,21 @@ public class PagoControlador {
         return "redirect:/listapagos";
     }
         
-    @RequestMapping(value="/eliminarusuario/{idPago}")
-	public String eliminaPago(@PathVariable int idPago) {
-		ps.deletePago(idPago);
-		log.info("Elimina un pago");
-		return "redirect:/listapagos";
-	}
-	
-	@RequestMapping(value="/editusuario/{idPago}")
-		public String editaPago(@PathVariable int idPago, Model modelo) {
-		Pago pag = ps.findPagoByid(idPago);
-		log.info("Ingresao a editar usuario");
-		modelo.addAttribute("command", pag);
-		log.info("Editando pago");
-		return "editarpago";
-	}
+//    @RequestMapping(value="/eliminarusuario/{idPago}")
+//	public String eliminaPago(@PathVariable int idPago) {
+//		ps.deletePago(idPago);
+//		log.info("Elimina un pago");
+//		return "redirect:/listapagos";
+//	}
+//	
+//	@RequestMapping(value="/editusuario/{idPago}")
+//		public String editaPago(@PathVariable int idPago, Model modelo) {
+//		Pago pag = ps.findPagoByid(idPago);
+//		log.info("Ingresao a editar usuario");
+//		modelo.addAttribute("command", pag);
+//		log.info("Editando pago");
+//		return "editarpago";
+//	}
 	
 	@RequestMapping(value="/guardapago", method = RequestMethod.POST) 
     public String guardaPago(Pago pag){

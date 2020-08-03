@@ -37,7 +37,7 @@
 						<tr>
 	                        <th><em class="fa fa-cog"></em>Acciones</th>
 							<th>Detalle</th>
-							<th title="">Estado de solicitud</th>
+							<th>Estado de solicitud</th>
 							<th>Fecha Solicitada</th>
 							<th>Nombre Asesoria</th>
 						</tr> 
@@ -57,11 +57,16 @@
 	                    </c:forEach>
 	                   </tbody>
 	                </table>
+	                <div class="col-4 text-left">
+   				<a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+   				</div>
 	              </div>
 	  		</div>
 	 	 </div>
 	  </div>
 	  </div>
+	 
+	  
  </sec:authorize>
  
  <sec:authorize access="hasRole('USER')">
@@ -76,6 +81,7 @@
 	              <div class="col-8">
 	                <h3 class="panel-title">Listado de Accidentes</h3>
 	                 </div>
+						                
 	                  <div class="col-4 text-right">
 	                    <a role="button" aria-pressed="true" title="Editar usuario" href="acciform" class="btn btn-sm btn-success btn-create">Reportar Accidente</a>
 	                  </div>
@@ -103,10 +109,15 @@
 	                    </c:forEach>
 	                   </tbody>
 	                </table>
+	                <div class="col-4 text-left">
+   				<a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+   				</div>
 	              </div>
 	  		</div>
 	 	 </div>
 	  </div>
 	  </div>
+	  
+	  
  </sec:authorize>
  <%@include file="/footer.jsp" %> 

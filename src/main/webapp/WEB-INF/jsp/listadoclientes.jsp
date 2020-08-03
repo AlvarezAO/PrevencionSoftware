@@ -3,6 +3,8 @@
 <style>      
     body{
         padding-top:60px;
+        
+       
     }
     /* fix padding under menu after resize */
     @media screen and (max-width: 767px) {
@@ -52,7 +54,7 @@
                             <td align="center">
                               <a class="btn btn-primary mb-1" title="Editar usuario" href="editusuario/${lista.rutCli}"><em class="fa fa-pencil xs"></em></a>
                               <a class="btn btn-danger mb-1" title="Eliminar usuario" href="eliminarusuario/${lista.rutCli}"><em class="fa fa-trash xs"></em></a>
-                              <a class="btn btn-warning mb-1" title="Asignar Rol" href="agregarol/${lista.rutCli}"><em class="fa fa-male xs"></em></a>
+                              <a class="btn btn-warning mb-1" title="Asignar Rol" href=""><em class="fa fa-male xs"></em></a>
                             </td>
                             <td class="align-middle">${lista.rutCli}</td>
 							<td class="align-middle">${lista.nombreCli}</td>
@@ -62,11 +64,14 @@
                     </c:forEach>
                    </tbody>
                 </table>
+                <div class="col-4 text-left">
+   				<a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+   				</div>
               </div>
-  		</div>
+        </div>
  	 </div>
   </div>
   </div>
    
-
+   
 <%@include file="/footer.jsp" %>

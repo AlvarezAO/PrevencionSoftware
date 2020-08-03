@@ -31,10 +31,12 @@
                     <div class="col-sm-6 input-column"><form:input path="estado" class="form-control" type="text" /></div>
                 </div>
                              
-                <button class="btn btn-primary submit-button mb-3" type="submit" >Guardar</button>
+                <button class="btn btn-primary submit-button mb-3" type="submit" >Guardar</button><br>
+                <a role="button" aria-pressed="true" title="Volver" href="listarclientes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
                 </form:form>
         </div>
     </div>
+   
 
 
 	<%@include file="/footer.jsp" %>

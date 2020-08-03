@@ -53,7 +53,7 @@ public class ClienteControlador {
 		} catch (Exception e) {
 			e.getStackTrace();
 			log.info("Error al crear usuario");
-			return "";
+			return "index";
 		}
        
         return "redirect:/listarclientes";

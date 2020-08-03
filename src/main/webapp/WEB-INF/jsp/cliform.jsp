@@ -35,7 +35,7 @@
                     <div class="col-sm-6 input-column"><form:input path="rubroCli" class="form-control" type="text" /></div>
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-sm-4 label-column"><label class="col-form-label" for="direccion-input-field">Direcion: </label></div>
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="direccion-input-field">Direccion: </label></div>
                     <div class="col-sm-6 input-column"><form:input path="direccionCli" class="form-control" type="text" /></div>
                 </div>
                                 
