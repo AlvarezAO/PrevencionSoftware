@@ -63,8 +63,15 @@ public class AsesoriaControlador {
 	
 	@RequestMapping(value="/changeaseso", method= RequestMethod.POST)
 	public String cambiadatosaseso(Asesoria ase) {
-		as.updateAsesoria(ase);
-		log.info("Realiza cambio en asesoria " + ase);
+		try {
+			as.updateAsesoria(ase);
+			log.info("Realiza cambio en asesoria " + ase);
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al actualizar nuevo formulario asesoria");
+			return "editaseso";
+		}
+		
 		return "redirect:/listarasesorias";
 	}
 	
@@ -75,16 +82,10 @@ public class AsesoriaControlador {
 			as.addAsesoria(ase);
 			log.info("Guarda nuevo formulario asesoria");
 		} catch (Exception e) {
-<<<<<<< HEAD
 			e.getStackTrace();
 			log.info("Error al Guardar nuevo formulario asesoria");
+			return "asesform";
 		}
-		
-		log.info("Guarda nuevo formulario asesoria");
-=======
-			log.info("Error al guardar nuevo formulario asesoria");
-		}
->>>>>>> 5bbce4157a403df4f7107adafd5fccf149a26e33
 		return "redirect:/listarasesorias";
 	}
 	

@@ -38,8 +38,15 @@ public class EmpleadoControlador {
 	 
 	 @RequestMapping(value="/savepro", method = RequestMethod.POST)
 	 public String guardaPro(Empleado emp) {
-		 es.addEmpleado(emp);
-		 log.info("Ha creado nuevo empleado");
+		 try {
+			 es.addEmpleado(emp);
+			 log.info("Ha creado nuevo empleado");
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al crear empleado");
+			return "empform";
+		}
+		 
 		 return "redirect:/listarempleados";
 	 }
 	 
@@ -60,8 +67,14 @@ public class EmpleadoControlador {
 	 
 	 @RequestMapping(value="/cambiospro", method = RequestMethod.POST) 
 	    public String guardaCambio(Empleado emp){
-	        es.updateEmpleado(emp);
-	        log.info("Edicion guardada de empleado "+emp);
+		 try {
+			 es.updateEmpleado(emp);
+		     log.info("Edicion guardada de empleado "+emp);
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al actualizar empleado");
+		}
+	        
 			return "redirect:/listarempleados";
 	    }
 	 

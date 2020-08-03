@@ -67,15 +67,30 @@ public class AccidenteControlador {
 	
 	@RequestMapping(value="/changeAcci", method = RequestMethod.POST)
 	public String cambiaAccidente(Accidente accidente) {
-		acc.updateAccidente(accidente);
-		log.info("Formulario accidente editado: " + acc);
+		
+		try {
+			acc.updateAccidente(accidente);
+			log.info("Formulario accidente editado: " + acc);
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al actualizar");
+			return "ediaccidente";
+		}
+		
 		return "redirect:/listaraccidentes";		
 	}
 	
 	@RequestMapping(value="/guardaaccidente", method = RequestMethod.POST)
 	public String saveAcci(@ModelAttribute("acci") Accidente acci) {
-		acc.addAccidente(acci);
-		log.info("Formulario accidente creado: " + acci);
+		try {
+			acc.addAccidente(acci);
+			log.info("Formulario accidente creado: " + acci);
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al guardar datos en formulario accidente");
+			return "acciform";
+		}
+		
 		return "redirect:/listaraccidentes";
 	}
 }

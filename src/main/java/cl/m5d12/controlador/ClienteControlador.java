@@ -46,9 +46,16 @@ public class ClienteControlador {
     } 
 
     @RequestMapping(value="/save",method = RequestMethod.POST)    
-    public String save(@ModelAttribute("cli") Cliente cli){    
-        cs.addCliente(cli);
-        log.info("Guarda nuevo cliente");
+    public String save(@ModelAttribute("cli") Cliente cli){ 
+    	try {
+    		 cs.addCliente(cli);
+    	     log.info("Usuario creado correctamente");
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al crear usuario");
+			return "";
+		}
+       
         return "redirect:/listarclientes";
     }
     	
@@ -96,8 +103,15 @@ public class ClienteControlador {
 	
 	@RequestMapping(value="/guardacambio", method = RequestMethod.POST) 
     public String guardaCambio(Cliente cli){
-        cs.updateCliente(cli);
-        log.info("Nuevo usuario creado");
+		try {
+			cs.updateCliente(cli);
+	        log.info("Actualizacion correcta");
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al actualizar usuario");
+			return "cliform";
+		}
+        
 		return "redirect:/listarclientes";
     }
 

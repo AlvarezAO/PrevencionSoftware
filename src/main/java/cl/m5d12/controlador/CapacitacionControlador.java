@@ -66,15 +66,29 @@ public class CapacitacionControlador {
 	
 	@RequestMapping(value="/changecapa", method=RequestMethod.POST)
 	public String cambiaCapa(Capacitacion cap) {
-		capaser.updateCapa(cap);
-		log.info("Edicion correcta de "+ capaser);
+		try {
+			capaser.updateCapa(cap);
+			log.info("Edicion correcta de "+ capaser);
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al editar capacitación");
+			return "edicapacitacion";
+		}
+		
 		return "redirect:/listarcapa";
 	}
 	
 	@RequestMapping(value="/savecapa", method=RequestMethod.POST)
 	public String guardaCapa(@ModelAttribute("capa") Capacitacion capa) {
-		capaser.addCapa(capa);
-		log.info("Capacitacion creada " + capaser);
+		try {
+			capaser.addCapa(capa);
+			log.info("Capacitacion creada " + capaser);
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al crear capacitacion");
+			return "capaform";
+		}
+		
 		return "redirect:/listarcapa";
 	}
 }

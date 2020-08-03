@@ -45,9 +45,15 @@ public class PagoControlador {
     } 
     
     @RequestMapping(value="/grabapago",method = RequestMethod.POST)    
-    public String save(@ModelAttribute("pag") Pago pag){    
-        ps.addPago(pag); 
-        log.info("Registra un pago nuevo");
+    public String save(@ModelAttribute("pag") Pago pag){  
+    	try {
+    		ps.addPago(pag); 
+            log.info("Registra un pago nuevo");
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al crear pago");
+			return "pagoform";
+		}
         return "redirect:/listapagos";
     }
         
@@ -69,8 +75,16 @@ public class PagoControlador {
 	
 	@RequestMapping(value="/guardapago", method = RequestMethod.POST) 
     public String guardaPago(Pago pag){
-        ps.updatePago(pag);
-        log.info("Pago editado correctamente");
+		try {
+			 ps.updatePago(pag);
+		     log.info("Pago editado correctamente");
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al editar pago");
+			return "pagoform";
+				
+		}
+       
 		return "redirect:/listapagos";
     }
 
