@@ -1,17 +1,14 @@
 package cl.m5d12.dao;
 
-import java.io.Serializable;
 import javax.persistence.*;
-
-
 /**
  * The persistent class for the CHECKLIST database table.
  * 
  */
 @Entity
-@NamedQuery(name="Checklist.findAll", query="SELECT c FROM Checklist c")
-public class Checklist implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+public class Checklist  {
+	
 
 	@Id
 	@Column(name="ID_CHECKLIST")
@@ -20,6 +17,7 @@ public class Checklist implements Serializable {
 	@Column(name="DETALLE_CHEQUEO")
 	private String detalleChequeo;
 
+	@Column(name="ESTADO")
 	private String estado;
 
 	@Column(name="ID_VISITAS")
@@ -78,9 +76,7 @@ public class Checklist implements Serializable {
 		this.idVisitas = idVisitas;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}		
+			
 	
 		
 }

@@ -25,6 +25,7 @@ public class AsesoriaControlador {
 	
 	Logger log = Logger.getLogger(AsesoriaControlador.class.getName());
 	
+
 	@RequestMapping("/listarasesorias")
 	public String verasesorias(Model m) {
 				
@@ -74,11 +75,16 @@ public class AsesoriaControlador {
 			as.addAsesoria(ase);
 			log.info("Guarda nuevo formulario asesoria");
 		} catch (Exception e) {
+<<<<<<< HEAD
 			e.getStackTrace();
 			log.info("Error al Guardar nuevo formulario asesoria");
 		}
 		
 		log.info("Guarda nuevo formulario asesoria");
+=======
+			log.info("Error al guardar nuevo formulario asesoria");
+		}
+>>>>>>> 5bbce4157a403df4f7107adafd5fccf149a26e33
 		return "redirect:/listarasesorias";
 	}
 	

@@ -27,7 +27,6 @@
             </div>
         </div>
     </nav>
-</div>   
 </sec:authorize>
 
 <sec:authorize access="hasRole('USER')">

@@ -6,4 +6,5 @@ public interface AsesoriaRepository extends CrudRepository<Asesoria, Integer> {
 	
 	/* public List<Asesoria> findAllByidAseso(int idAsesoria); */
 
+	
 }

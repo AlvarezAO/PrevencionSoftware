@@ -26,7 +26,11 @@ public class AccidenteControlador {
 	Logger log = Logger.getLogger(AsesoriaControlador.class.getName());
 	
 	@RequestMapping("/listaraccidentes")
-	public String veraccidentes(Model m) {
+	public String veraccidentes(Model m, HttpServletRequest request) {
+		Principal principal = request.getUserPrincipal();
+		String name = principal.getName();
+		int username = Integer.parseInt(name);
+		System.out.println(username);
 		List<Accidente> listaaccidentes = acc.listaAccidente();
 		m.addAttribute("laccidente", listaaccidentes);
 		log.info("Lista de accidentes revisada");
