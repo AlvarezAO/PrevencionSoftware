@@ -4,6 +4,7 @@
 <style>   
     body{
         padding-top:60px;
+        margin-top: 20px;
     }
     /* fix padding under menu after resize */
     @media screen and (max-width: 767px) {
@@ -36,23 +37,26 @@
                 </div>
                 <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="fecha-input-field">Fecha Capacitación: </label></div>
-                    <div class="col-sm-6 input-column"><form:input path="fechaCapa" class="form-control" type="text" /></div>
+                    <div class="col-sm-6 input-column"><form:input path="fechaCapa" class="form-control" type="date" /></div>
                 </div>
                  <div class="form-row form-group">
                      <div class="col-sm-4 label-column"><label class="col-form-label" for="nomAseso-input-field">Estado Solicitud</label></div> 
-                    <div class="col-sm-6 input-column"><form:input path="estadoSolicitud" class="form-control" type="text" readonly="true"/></div>
+                    <div class="col-sm-6 input-column"><form:input path="estadoSolicitud" class="form-control" type="text"/></div>
                  </div>    
                  <div class="form-row form-group">
                     <div class="col-sm-4 label-column"><label class="col-form-label" for="cliente-input-field">Cliente</label></div>
                     <div class="col-sm-6 input-column"><form:input path="rutCli" class="form-control" type="text" readonly="true"/></div>
                 </div>            
-                <button class="btn btn-primary submit-button mb-3" type="submit" >Modificar</button>
+                <button class="btn btn-primary submit-button mb-3" type="submit" >Modificar</button><br>
+                <div class="text-left">
+                <a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+                 </div>
                 </form:form>
         </div>
     </div>
-    <div class="col-4 text-right">
-   <a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
-   </div>
+    
+   
+  
 
 
 <%@include file="/footer.jsp" %> 

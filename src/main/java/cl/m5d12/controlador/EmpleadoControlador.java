@@ -57,7 +57,7 @@ public class EmpleadoControlador {
 		 return "redirect:/listarempleados";
 	 }
 	 
-	 @RequestMapping(value="/editempleado")
+	 @RequestMapping(value="/editempleado/{rutEmp}")
 	 public String editaPro(@PathVariable int rutEmp, Model mo) {	 
 	  Empleado em = es.findEmpleadoByid(rutEmp);
 	  mo.addAttribute("command", em);

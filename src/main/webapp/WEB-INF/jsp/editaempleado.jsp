@@ -5,6 +5,7 @@
 <style>      
     body{
         padding-top:60px;
+        margin-top: 20px;
     }
     /* fix padding under menu after resize */
     @media screen and (max-width: 767px) {
@@ -44,12 +45,13 @@
                 </div>
                 
                                 
-                <button class="btn btn-primary submit-button mb-3" type="submit" >Modificar</button>
+                <button class="btn btn-primary submit-button mb-3" type="submit" >Modificar</button><br>
+                <div class="text-left">
+                <a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
+                 </div>
                 </form:form>
         </div>
     </div>
-    <div class="col-4 text-right">
-   <a role="button" aria-pressed="true" title="Volver" href="menusolicitudes" class="btn btn-sm btn-info btn-create mb-4">Volver a menu</a>
-   </div>
+    
 
 	<%@include file="/footer.jsp" %>
