@@ -23,7 +23,7 @@ public class AsesoriaImple implements AsesoriaServicio{
 	@Override
 	public List<Asesoria> listaAseso() {
 		return (List<Asesoria>) as.findAll();
-	}
+	}	
 
 	@Override
 	public void addAsesoria(Asesoria Aseso) {
@@ -42,6 +42,13 @@ public class AsesoriaImple implements AsesoriaServicio{
 		as.save(Aseso);
 		
 	}
+
+	/*
+	 * @Override public List<Asesoria> listaporcliente(int idAsesoria) { return
+	 * (List<Asesoria>) as.findAllByidAseso(idAsesoria);
+	 * 
+	 * }
+	 */
 
 
 }

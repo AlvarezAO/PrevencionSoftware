@@ -11,5 +11,6 @@ public interface AsesoriaServicio {
 	void addAsesoria(Asesoria Aseso);
 	void deleteAsesoria(int idAsesoria);
 	void updateAsesoria(Asesoria Aseso);
+	/* List<Asesoria> listaporcliente(int idAsesoria); */
 	
 }

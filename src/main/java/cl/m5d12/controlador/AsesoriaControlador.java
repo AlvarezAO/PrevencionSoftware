@@ -27,6 +27,7 @@ public class AsesoriaControlador {
 	
 	@RequestMapping("/listarasesorias")
 	public String verasesorias(Model m) {
+				
 		List<Asesoria> listaasesorias = as.listaAseso();
 		m.addAttribute("lasesorias", listaasesorias);
 		log.info("Se ha visto lista asesoria");
@@ -69,7 +70,14 @@ public class AsesoriaControlador {
 	
 	@RequestMapping(value="/guardaAseso", method=RequestMethod.POST)
 	public String guardaAse(@ModelAttribute("Ase") Asesoria ase) {
-		as.addAsesoria(ase);
+		try {
+			as.addAsesoria(ase);
+			log.info("Guarda nuevo formulario asesoria");
+		} catch (Exception e) {
+			e.getStackTrace();
+			log.info("Error al Guardar nuevo formulario asesoria");
+		}
+		
 		log.info("Guarda nuevo formulario asesoria");
 		return "redirect:/listarasesorias";
 	}
