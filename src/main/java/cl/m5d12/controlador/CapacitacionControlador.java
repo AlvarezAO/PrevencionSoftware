@@ -29,10 +29,12 @@ public class CapacitacionControlador {
 	Logger log = Logger.getLogger(CapacitacionControlador.class.getName());
 	
 	
+	
 	@RequestMapping("/listarcapa")
 	public String verCapa(Model m) {
 		List<Capacitacion> listacapa = capaser.listacapacitacion();
 		m.addAttribute("listcapa", listacapa);
+		log.info("Ha visto la lista de capacitaciones ");
 		return "listadocapacitacion";
 	}
 	
@@ -43,12 +45,14 @@ public class CapacitacionControlador {
 		int username = Integer.parseInt(name);
 		mo.addAttribute("id", username);
 		m.addAttribute("command", new Capacitacion());
+		log.info("Creando capacitacion ");
 		return "capaform";		
 	}
 	
 	@RequestMapping(value="/eliminacapa/{idCapa}")
 	public String eliminaCapa(@PathVariable int idCapa) {
 		capaser.deleteCapa(idCapa);
+		log.info("Se ha borrado " + capaser);
 		return "redirect:/listarcapa";
 	}
 	
@@ -56,18 +60,21 @@ public class CapacitacionControlador {
 	public String editaCapa(@PathVariable int idCapa, Model m) {
 		Capacitacion cap = capaser.findCapacitacionByid(idCapa);
 		m.addAttribute("command", cap);
+		log.info("Editando a  " + cap);
 		return "edicapacitacion";
 	}
 	
 	@RequestMapping(value="/changecapa", method=RequestMethod.POST)
 	public String cambiaCapa(Capacitacion cap) {
 		capaser.updateCapa(cap);
+		log.info("Edicion correcta de "+ capaser);
 		return "redirect:/listarcapa";
 	}
 	
 	@RequestMapping(value="/savecapa", method=RequestMethod.POST)
 	public String guardaCapa(@ModelAttribute("capa") Capacitacion capa) {
 		capaser.addCapa(capa);
+		log.info("Capacitacion creada " + capaser);
 		return "redirect:/listarcapa";
 	}
 }

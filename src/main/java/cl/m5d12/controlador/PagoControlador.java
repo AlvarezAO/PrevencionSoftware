@@ -29,6 +29,7 @@ public class PagoControlador {
 	public String verpagos(Model m) {
 		List<Pago> listapago = ps.listaPago();
 		m.addAttribute("lpago",listapago);
+		log.info("Viendo lista de pagos");
 		return "listadopagos";
 	}
 	
@@ -39,18 +40,21 @@ public class PagoControlador {
         int username = Integer.parseInt(name);
         modelo.addAttribute("id", username);
     	m.addAttribute("command", new Pago());
+    	log.info("Crea formulario de pagos");
         return "pagoform";
     } 
     
     @RequestMapping(value="/grabapago",method = RequestMethod.POST)    
     public String save(@ModelAttribute("pag") Pago pag){    
         ps.addPago(pag); 
+        log.info("Registra un pago nuevo");
         return "redirect:/listapagos";
     }
         
     @RequestMapping(value="/eliminarusuario/{idPago}")
 	public String eliminaPago(@PathVariable int idPago) {
 		ps.deletePago(idPago);
+		log.info("Elimina un pago");
 		return "redirect:/listapagos";
 	}
 	
@@ -59,12 +63,14 @@ public class PagoControlador {
 		Pago pag = ps.findPagoByid(idPago);
 		log.info("Ingresao a editar usuario");
 		modelo.addAttribute("command", pag);
+		log.info("Editando pago");
 		return "editarpago";
 	}
 	
 	@RequestMapping(value="/guardapago", method = RequestMethod.POST) 
     public String guardaPago(Pago pag){
         ps.updatePago(pag);
+        log.info("Pago editado correctamente");
 		return "redirect:/listapagos";
     }
 

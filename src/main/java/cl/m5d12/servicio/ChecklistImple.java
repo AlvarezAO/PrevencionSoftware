@@ -3,10 +3,11 @@ package cl.m5d12.servicio;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cl.m5d12.dao.Checklist;
 import cl.m5d12.dao.ChecklistRepository;
-
+@Service
 public class ChecklistImple implements ChecklistServicio{
 	
 	@Autowired

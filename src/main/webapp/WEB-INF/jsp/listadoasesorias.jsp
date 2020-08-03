@@ -16,8 +16,57 @@
     }
     
 </style>
-
+<sec:authorize access="hasRole('ADMIN')">
 <div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+    <p></p>
+    <h1>SECURITY LIFE</h1>
+       <div class="panel panel-default panel-table">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-8">
+                <h3 class="panel-title">Listado de Asesorias</h3>
+                 </div>
+                </div>
+              </div>
+              <div class="panel-body table-responsive">
+                <table class="table table-striped table-bordered table-list ">
+                  <thead>
+					<tr>
+                        <th><em class="fa fa-cog"></em>Acciones</th>
+						<th>Detalle</th>
+						<th>Estado de solicitud</th>
+						<th>Fecha Solicitada</th>
+						<th>Nombre Asesoria</th>
+<!-- 						<th>Rut Cliente</th> -->
+<!-- 						<th>Visitas</th> -->
+					</tr> 
+                  </thead>
+                  <tbody align="center">
+                  <c:forEach items="${lasesorias}" var="lista">
+                          <tr>
+                            <td align="center">
+                              <a class="btn btn-primary mb-1" title="Editar asesoria" href="editAsesoria/${lista.idAseso}"><em class="fa fa-pencil xs"></em></a>
+                              <a class="btn btn-danger mb-1" title="Eliminar asesoria" href="eliminaaseso/${lista.idAseso}"><em class="fa fa-trash xs"></em></a>
+                            </td>
+							<td class="align-middle">${lista.detalleAseso}</td>
+							<td class="align-middle">${lista.estadoSolicitud}</td>
+							<td class="align-middle">${lista.fechaAseso}</td>
+							<td class="align-middle">${lista.nombreAseso}</td>
+							</tr>
+                    </c:forEach>
+                   </tbody>
+                </table>
+              </div>
+  		</div>
+ 	 </div>
+  </div>
+  </div>
+   </sec:authorize>
+   
+   <sec:authorize access="hasRole('USER')">
+   			<div class="container">
     <div class="row">
         <div class="col-md-10 offset-md-1">
     <p></p>
@@ -37,10 +86,8 @@
                 <table class="table table-striped table-bordered table-list ">
                   <thead>
 					<tr>
-                        <th><em class="fa fa-cog"></em>Acciones</th>
-                        <th>Id</th>
 						<th>Detalle</th>
-						<th title="">Estado de solicitud</th>
+						<th>Estado de solicitud</th>
 						<th>Fecha Solicitada</th>
 						<th>Nombre Asesoria</th>
 <!-- 						<th>Rut Cliente</th> -->
@@ -50,11 +97,6 @@
                   <tbody align="center">
                   <c:forEach items="${lasesorias}" var="lista">
                           <tr>
-                            <td align="center">
-                              <a class="btn btn-primary mb-1" title="Editar asesoria" href="editAsesoria/${lista.idAseso}"><em class="fa fa-pencil xs"></em></a>
-                              <a class="btn btn-danger mb-1" title="Eliminar asesoria" href="eliminaaseso/${lista.idAseso}"><em class="fa fa-trash xs"></em></a>
-                            </td>
-                            <td class="align-middle">${lista.idAseso}</td>
 							<td class="align-middle">${lista.detalleAseso}</td>
 							<td class="align-middle">${lista.estadoSolicitud}</td>
 							<td class="align-middle">${lista.fechaAseso}</td>
@@ -68,5 +110,5 @@
  	 </div>
   </div>
   </div>
-  
+    </sec:authorize>
  <%@include file="/footer.jsp" %> 

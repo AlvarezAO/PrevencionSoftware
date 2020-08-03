@@ -26,9 +26,14 @@ public class AccidenteControlador {
 	Logger log = Logger.getLogger(AsesoriaControlador.class.getName());
 	
 	@RequestMapping("/listaraccidentes")
-	public String veraccidentes(Model m) {
+	public String veraccidentes(Model m, HttpServletRequest request) {
+		Principal principal = request.getUserPrincipal();
+		String name = principal.getName();
+		int username = Integer.parseInt(name);
+		System.out.println(username);
 		List<Accidente> listaaccidentes = acc.listaAccidente();
 		m.addAttribute("laccidente", listaaccidentes);
+		log.info("Lista de accidentes revisada");
 		return "listadoaccidente";
 	}
 	
@@ -40,6 +45,7 @@ public class AccidenteControlador {
 		
 		mo.addAttribute("id", username);
 		m.addAttribute("command", new Accidente());
+		log.info("Formulario accidente creado por rut: " + name);
 		
 		return "acciform";		
 	}
@@ -47,6 +53,7 @@ public class AccidenteControlador {
 	@RequestMapping(value="/eliminaacci/{idAccidente}")
 	public String eliminaacci(@PathVariable int idAccidente) {
 		acc.deleteAccidente(idAccidente);
+		log.info("Reporte accidente eliminado");
 		return "redirect:/listaraccidentes";
 	}
 	
@@ -54,18 +61,21 @@ public class AccidenteControlador {
 	public String editaAcci(@PathVariable int idAccidente, Model m) {
 		Accidente acci = acc.findAccidenteByid(idAccidente);
 		m.addAttribute("command", acci);
+		log.info("Formulario accidente editado: " + acci);
 		return "ediaccidente";
 	}
 	
 	@RequestMapping(value="/changeAcci", method = RequestMethod.POST)
 	public String cambiaAccidente(Accidente accidente) {
 		acc.updateAccidente(accidente);
+		log.info("Formulario accidente editado: " + acc);
 		return "redirect:/listaraccidentes";		
 	}
 	
 	@RequestMapping(value="/guardaaccidente", method = RequestMethod.POST)
 	public String saveAcci(@ModelAttribute("acci") Accidente acci) {
 		acc.addAccidente(acci);
+		log.info("Formulario accidente creado: " + acci);
 		return "redirect:/listaraccidentes";
 	}
 }

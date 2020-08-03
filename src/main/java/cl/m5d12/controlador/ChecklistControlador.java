@@ -20,13 +20,13 @@ import javax.servlet.http.HttpServletRequest;
 public class ChecklistControlador {
 
 	@Autowired
-	ChecklistServicio ch;
+	ChecklistServicio chk;
 	
 	Logger log = Logger.getLogger(Checklist.class.getName());
 	
 	@RequestMapping("/listarCheck")
 	public String vercheck(Model m) {
-		List<Checklist> listacheck = ch.listaCheck();
+		List<Checklist> listacheck = chk.listaCheck();
 		m.addAttribute("listcheck", listacheck);
 		return "listadocheck";
 	}
@@ -43,26 +43,33 @@ public class ChecklistControlador {
 	
 	@RequestMapping(value="/eliminacheck/{idChecklist}")
 	public String eliminacheck(@PathVariable int idChecklist, Model mo){
-	ch.deleteChecklist(idChecklist);
+	chk.deleteChecklist(idChecklist);
 	return "redirect:/listacheck";
 	}
 	
 	@RequestMapping(value="/editcheck/{idChecklist}")
 	public String editCheck(@PathVariable int idChecklist, Model modelo){
-	Checklist chec = ch.findCheckByid(idChecklist);
+	Checklist chec = chk.findCheckByid(idChecklist);
 	modelo.addAttribute("command", chec);
 	return "editlistcheck";
 	}
 		
 	@RequestMapping(value="/cambiacheck", method= RequestMethod.POST)
 	public String cambiadatoscheck(Checklist check) {
-	ch.updateChecklist(check);
+	chk.updateChecklist(check);
 	return "redirect:/listacheck";
 	}
 	
 	@RequestMapping(value="/savecheck", method = RequestMethod.POST)
-	public String guardaCheck(@ModelAttribute("chk") Checklist chk) {
-	ch.addCheck(chk);	
+	public String guardaCheck(@ModelAttribute("chkl") Checklist chkl) {
+	chk.addCheck(chkl);	
 	return "redirect:/listacheck";
 	}
+	
+	
+	
+	
+	
+	
+	
 }
